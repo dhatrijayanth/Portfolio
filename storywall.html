@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>StoryWall - Dhatri Jayanth</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Georama:wght@400;500;600&family=Platypi:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="case-study.css" />
+  </head>
+  <body>
+    <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+      <span></span>
+    </button>
+    <div class="nav-backdrop"></div>
+
+    <div class="site">
+      <aside class="sidebar" aria-label="Primary">
+        <a class="brand" href="index.html">
+          <span class="brand-name">Dhatri Jayanth</span>
+          <span class="brand-role">Experience Designer</span>
+        </a>
+        <nav class="nav">
+          <a class="is-active" href="projects.html">Projects</a>
+          <a href="about.html">About</a>
+          <a href="resume.html">Resume</a>
+          <a href="contact.html">Contact</a>
+          <a href="art.html">Art</a>
+        </nav>
+      </aside>
+
+      <main class="main">
+        <article class="page cs">
+          <a class="cs-back" href="projects.html">Back to work</a>
+
+          <p class="page-label">Immersive design</p>
+          <h1 class="page-title">StoryWall</h1>
+          <p class="cs-summary">
+            An immersive experience that showcases the Texas Immersive Institute's past projects.
+          </p>
+
+          <div class="cs-hero-media">
+            <div
+              class="cs-carousel"
+              data-carousel
+              tabindex="0"
+              aria-roledescription="carousel"
+              aria-label="StoryWall experience media"
+            >
+              <div class="cs-carousel__viewport">
+                <ul class="cs-carousel__track">
+                  <li class="cs-carousel__slide">
+                    <div class="cs-ph cs-ph--hero" role="img" aria-label="Placeholder for StoryWall experience video">
+                      [VIDEO: muted looping walkthrough of the immersive experience, with poster]
+                    </div>
+                  </li>
+                  <li class="cs-carousel__slide">
+                    <div class="cs-ph cs-ph--hero" role="img" aria-label="Placeholder for StoryWall installation photo">
+                      [IMAGE: installation photo of StoryWall in situ]
+                    </div>
+                  </li>
+                  <li class="cs-carousel__slide">
+                    <div class="cs-ph cs-ph--hero" role="img" aria-label="Placeholder for StoryWall visitor interaction photo">
+                      [IMAGE: visitors engaging with the wall]
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="cs-carousel__controls">
+                <div class="cs-carousel__nav">
+                  <button type="button" class="cs-carousel__btn cs-carousel__btn--prev" aria-label="Previous slide">‹</button>
+                  <button type="button" class="cs-carousel__btn cs-carousel__btn--next" aria-label="Next slide">›</button>
+                </div>
+                <div class="cs-carousel__dots" aria-label="Slide controls"></div>
+              </div>
+              <p class="cs-carousel__status" aria-live="polite"></p>
+            </div>
+            <p class="cs-caption">Immersive work needs motion first. Stills fill in spatial context.</p>
+          </div>
+
+          <dl class="cs-meta">
+            <div>
+              <dt>Role</dt>
+              <dd>[MY ROLE on the team]. I owned [PARTS I DESIGNED]. The team owned [PARTS OTHERS OWNED].</dd>
+            </div>
+            <div>
+              <dt>Team</dt>
+              <dd>Group project, [TEAM SIZE]</dd>
+            </div>
+            <div>
+              <dt>Timeline</dt>
+              <dd>[TIMELINE]</dd>
+            </div>
+            <div>
+              <dt>Tools</dt>
+              <dd>[TOOLS]</dd>
+            </div>
+          </dl>
+
+          <section class="cs-section cs-section--wide" aria-labelledby="storywall-overview">
+            <p class="cs-eyebrow">Overview</p>
+            <h2 id="storywall-overview">TL;DR</h2>
+            <div class="cs-overview">
+              <div class="cs-overview__item">
+                <span class="cs-overview__label">The problem</span>
+                <p>
+                  The Institute's past projects were hard to experience as a body of work. Visitors needed a spatial way in, not a static archive.
+                </p>
+              </div>
+              <div class="cs-overview__item">
+                <span class="cs-overview__label">What I did</span>
+                <p>
+                  [WHAT I DID: specific interaction, content, visual, or spatial design contributions]
+                </p>
+              </div>
+              <div class="cs-overview__item">
+                <span class="cs-overview__label">The outcome</span>
+                <p>
+                  [OUTCOME: how the experience was shown and who encountered it]
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section class="cs-section" aria-labelledby="storywall-context">
+            <p class="cs-eyebrow">Context</p>
+            <h2 id="storywall-context">Context and challenge</h2>
+            <p>
+              Visitors to the Texas Immersive Institute include students, faculty, and guests who may know little about prior projects. The wall had to orient them quickly and invite longer looking.
+            </p>
+            <p>
+              Content curation mattered as much as interaction. The selection had to feel representative without overwhelming the space.
+            </p>
+            <blockquote class="cs-pullquote">
+              The challenge was to make past immersive work feel present again, in a form people could walk up to and explore.
+            </blockquote>
+          </section>
+
+          <section class="cs-section cs-section--wide" aria-labelledby="storywall-goals">
+            <p class="cs-eyebrow">Goals</p>
+            <h2 id="storywall-goals">Goals</h2>
+            <ol class="cs-goals">
+              <li>Help first-time visitors understand what the Institute makes.</li>
+              <li>Showcase past projects as an experience, not only as a list.</li>
+              <li>Keep authorship clear: my contributions versus team contributions.</li>
+            </ol>
+          </section>
+
+          <section class="cs-section cs-section--wide" aria-labelledby="storywall-research">
+            <p class="cs-eyebrow">Research</p>
+            <h2 id="storywall-research">Research and insights</h2>
+            <p>
+              Research focused on audience and curation: who visits, what they should feel or learn, and how project stories should be selected and sequenced.
+            </p>
+            <p>
+              Methods: [RESEARCH METHODS].
+            </p>
+            <div class="cs-insight-grid">
+              <article class="cs-insight">
+                <h3>[INSIGHT: who visits]</h3>
+                <p>[Supporting sentence about visitor goals or attention patterns.]</p>
+              </article>
+              <article class="cs-insight">
+                <h3>[INSIGHT: what they should feel or learn]</h3>
+                <p>[Supporting sentence about desired emotional or educational takeaway.]</p>
+              </article>
+              <article class="cs-insight">
+                <h3>[INSIGHT: how content was curated]</h3>
+                <p>[Supporting sentence about selection criteria or narrative order.]</p>
+              </article>
+            </div>
+          </section>
+
+          <section class="cs-section cs-section--wide" aria-labelledby="storywall-ideation">
+            <p class="cs-eyebrow">Ideation</p>
+            <h2 id="storywall-ideation">Ideation and structure</h2>
+            <p>
+              We explored how people would approach the wall, what they would touch or trigger, and how project stories would branch.
+            </p>
+
+            <div class="cs-carousel" data-carousel tabindex="0" aria-roledescription="carousel" aria-label="StoryWall journey diagrams">
+              <div class="cs-carousel__viewport">
+                <ul class="cs-carousel__track">
+                  <li class="cs-carousel__slide">
+                    <div class="cs-ph cs-ph--wide" role="img" aria-label="Placeholder for visitor journey diagram">
+                      [IMAGE: visitor journey from approach to deeper project stories]
+                    </div>
+                  </li>
+                  <li class="cs-carousel__slide">
+                    <div class="cs-ph cs-ph--wide" role="img" aria-label="Placeholder for content architecture diagram">
+                      [IMAGE: content architecture for curated projects]
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="cs-carousel__controls">
+                <div class="cs-carousel__nav">
+                  <button type="button" class="cs-carousel__btn cs-carousel__btn--prev" aria-label="Previous slide">‹</button>
+                  <button type="button" class="cs-carousel__btn cs-carousel__btn--next" aria-label="Next slide">›</button>
+                </div>
+                <div class="cs-carousel__dots" aria-label="Slide controls"></div>
+              </div>
+              <p class="cs-carousel__status" aria-live="polite"></p>
+            </div>
+            <p class="cs-caption">Structure before spectacle: path, then project depth.</p>
+
+            <div class="cs-carousel" data-carousel tabindex="0" aria-roledescription="carousel" aria-label="StoryWall sketches and wireframes" style="margin-top: 1.5rem">
+              <div class="cs-carousel__viewport">
+                <ul class="cs-carousel__track">
+                  <li class="cs-carousel__slide">
+                    <div class="cs-ph cs-ph--wide" role="img" aria-label="Placeholder for StoryWall sketches">
+                      [IMAGE: sketches of wall zones and interaction cues]
+                    </div>
+                  </li>
+                  <li class="cs-carousel__slide">
+                    <div class="cs-ph cs-ph--wide" role="img" aria-label="Placeholder for StoryWall wireframes">
+                      [IMAGE: wireframes for project story states]
+                    </div>
+                  </li>
+                  <li class="cs-carousel__slide">
+                    <div class="cs-ph cs-ph--wide" role="img" aria-label="Placeholder for StoryWall layout tests">
+                      [IMAGE: layout tests for spatial hierarchy]
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="cs-carousel__controls">
+                <div class="cs-carousel__nav">
+                  <button type="button" class="cs-carousel__btn cs-carousel__btn--prev" aria-label="Previous slide">‹</button>
+                  <button type="button" class="cs-carousel__btn cs-carousel__btn--next" aria-label="Next slide">›</button>
+                </div>
+                <div class="cs-carousel__dots" aria-label="Slide controls"></div>
+              </div>
+              <p class="cs-carousel__status" aria-live="polite"></p>
+            </div>
+            <p class="cs-caption">Each image shows a decision about approach, hierarchy, or story depth.</p>
+          </section>
+
+          <section class="cs-section" aria-labelledby="storywall-decisions">
+            <p class="cs-eyebrow">Decisions</p>
+            <h2 id="storywall-decisions">Design decisions</h2>
+
+            <div class="cs-decision">
+              <h3>[DECISION 1 TITLE]</h3>
+              <span class="cs-decision__label">The decision</span>
+              <p>[What we chose for interaction, layout, or narrative.]</p>
+              <span class="cs-decision__label">Why</span>
+              <p>[Why that choice served visitors and the Institute.]</p>
+              <span class="cs-decision__label">What I tried first</span>
+              <p>[Earlier option and why it changed.]</p>
+            </div>
+
+            <div class="cs-decision">
+              <h3>[DECISION 2 TITLE]</h3>
+              <span class="cs-decision__label">The decision</span>
+              <p>[Second key decision.]</p>
+              <span class="cs-decision__label">Why</span>
+              <p>[Reasoning.]</p>
+            </div>
+
+            <div class="cs-decision">
+              <h3>My work versus the team's</h3>
+              <span class="cs-decision__label">The decision</span>
+              <p>
+                Credit stays explicit on this page: [PARTS I DESIGNED] were mine. [PARTS THE TEAM OWNED] were collaborative or owned by others.
+              </p>
+              <span class="cs-decision__label">Why</span>
+              <p>
+                Immersive group work is easy to blur. Clear authorship helps recruiters read the case study honestly.
+              </p>
+            </div>
+          </section>
+
+          <section class="cs-section cs-section--wide" aria-labelledby="storywall-final">
+            <p class="cs-eyebrow">Final design</p>
+            <h2 id="storywall-final">Final design</h2>
+            <p>
+              The finished experience is best judged in motion and in space. Media below groups the polished work by feature.
+            </p>
+
+            <div class="cs-feature-block">
+              <h3>Approach and first encounter</h3>
+              <p>What visitors see and understand before they commit to a deeper story.</p>
+              <div class="cs-carousel" data-carousel tabindex="0" aria-roledescription="carousel" aria-label="Approach and first encounter media">
+                <div class="cs-carousel__viewport">
+                  <ul class="cs-carousel__track">
+                    <li class="cs-carousel__slide">
+                      <div class="cs-ph cs-ph--wide" role="img" aria-label="Placeholder for approach video or photo">
+                        [VIDEO OR IMAGE: first encounter]
+                      </div>
+                    </li>
+                    <li class="cs-carousel__slide">
+                      <div class="cs-ph cs-ph--wide" role="img" aria-label="Placeholder for orientation UI or physical cues">
+                        [IMAGE: orientation cues]
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="cs-carousel__controls">
+                  <div class="cs-carousel__nav">
+                    <button type="button" class="cs-carousel__btn cs-carousel__btn--prev" aria-label="Previous slide">‹</button>
+                    <button type="button" class="cs-carousel__btn cs-carousel__btn--next" aria-label="Next slide">›</button>
+                  </div>
+                  <div class="cs-carousel__dots" aria-label="Slide controls"></div>
+                </div>
+                <p class="cs-carousel__status" aria-live="polite"></p>
+              </div>
+            </div>
+
+            <div class="cs-feature-block">
+              <h3>Project stories</h3>
+              <p>How selected Institute projects unfold once someone digs in.</p>
+              <div class="cs-carousel" data-carousel tabindex="0" aria-roledescription="carousel" aria-label="Project story media">
+                <div class="cs-carousel__viewport">
+                  <ul class="cs-carousel__track">
+                    <li class="cs-carousel__slide">
+                      <div class="cs-ph cs-ph--wide" role="img" aria-label="Placeholder for project story screens or scenes">
+                        [IMAGE OR VIDEO: project story states]
+                      </div>
+                    </li>
+                    <li class="cs-carousel__slide">
+                      <div class="cs-ph cs-ph--wide" role="img" aria-label="Placeholder for additional project story media">
+                        [IMAGE OR VIDEO: additional story beats]
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="cs-carousel__controls">
+                  <div class="cs-carousel__nav">
+                    <button type="button" class="cs-carousel__btn cs-carousel__btn--prev" aria-label="Previous slide">‹</button>
+                    <button type="button" class="cs-carousel__btn cs-carousel__btn--next" aria-label="Next slide">›</button>
+                  </div>
+                  <div class="cs-carousel__dots" aria-label="Slide controls"></div>
+                </div>
+                <p class="cs-carousel__status" aria-live="polite"></p>
+              </div>
+            </div>
+
+            <p style="margin-top: 1.5rem">
+              <a class="btn" href="[PROTOTYPE OR DOCUMENTATION LINK]">View documentation</a>
+            </p>
+          </section>
+
+          <section class="cs-section cs-section--wide" aria-labelledby="storywall-results">
+            <p class="cs-eyebrow">Results</p>
+            <h2 id="storywall-results">Results and impact</h2>
+            <ul class="cs-stats">
+              <li>
+                <span class="cs-stats__num">[METRIC]</span>
+                <span class="cs-stats__label">[Audience or event metric]</span>
+              </li>
+              <li>
+                <span class="cs-stats__num">[METRIC]</span>
+                <span class="cs-stats__label">[Engagement or dwell metric]</span>
+              </li>
+            </ul>
+            <blockquote class="cs-quote">
+              [QUOTE: audience or faculty feedback, if available]
+              <cite>[Attribution]</cite>
+            </blockquote>
+            <p>
+              If metrics are still open, describe where the experience was installed and who used it.
+            </p>
+          </section>
+
+          <section class="cs-section" aria-labelledby="storywall-reflection">
+            <p class="cs-eyebrow">Reflection</p>
+            <h2 id="storywall-reflection">Reflection</h2>
+            <h3>What I learned</h3>
+            <ul>
+              <li>Immersive case studies need evidence of presence: video and space photos before interface chrome.</li>
+              <li>Curation is a design decision, not only a content task.</li>
+              <li>[LEARNING 3]</li>
+            </ul>
+            <h3>What I would do next</h3>
+            <ul>
+              <li>[NEXT STEP 1]</li>
+              <li>[NEXT STEP 2]</li>
+            </ul>
+          </section>
+
+          <a class="cs-next" href="ripple.html">
+            <span>
+              <span class="cs-next__label">Next project</span>
+              <p class="cs-next__title">Ripple</p>
+            </span>
+            <span class="cs-next__arrow" aria-hidden="true">→</span>
+          </a>
+        </article>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="case-study.js"></script>
+  </body>
+</html>

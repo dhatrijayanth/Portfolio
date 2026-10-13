@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 520" fill="none" aria-hidden="true">
+  <!-- Original bare tree: open round canopy, organic forks, uniform line weight -->
+  <g
+    stroke="#1f1c19"
+    stroke-width="3.4"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <!-- base + trunk -->
+    <path d="M160 500 H240" stroke-width="4" />
+    <path d="M200 500 C198 455 196 415 194 375" stroke-width="4.2" />
+
+    <!-- primary forks -->
+    <path d="M194 375 C170 345 140 320 108 305" />
+    <path d="M194 375 C218 345 248 320 280 305" />
+    <path d="M194 375 C180 335 170 295 168 255" />
+    <path d="M194 375 C208 335 218 295 220 255" />
+    <path d="M194 360 C194 320 194 280 194 235" />
+
+    <!-- left mid limbs -->
+    <path d="M108 305 C82 298 60 305 48 325" />
+    <path d="M108 305 C90 285 78 260 78 232" />
+    <path d="M108 305 C118 280 116 255 102 232" />
+    <path d="M168 255 C145 245 125 250 110 268" />
+    <path d="M168 255 C155 230 150 200 158 170" />
+    <path d="M168 255 C182 228 186 198 178 168" />
+
+    <!-- right mid limbs -->
+    <path d="M280 305 C306 298 328 305 340 325" />
+    <path d="M280 305 C298 285 310 260 310 232" />
+    <path d="M280 305 C270 280 272 255 286 232" />
+    <path d="M220 255 C243 245 263 250 278 268" />
+    <path d="M220 255 C233 230 238 200 230 170" />
+    <path d="M220 255 C206 228 202 198 210 168" />
+
+    <!-- center upper -->
+    <path d="M194 235 C176 210 168 180 172 150" />
+    <path d="M194 235 C212 210 220 180 216 150" />
+    <path d="M194 235 C194 200 194 170 194 140" />
+
+    <!-- left outer twigs -->
+    <path d="M48 325 C36 318 28 324 24 336" stroke-width="2.8" />
+    <path d="M78 232 C58 222 44 228 36 244" stroke-width="2.8" />
+    <path d="M78 232 C68 208 70 184 86 166" stroke-width="2.8" />
+    <path d="M102 232 C88 214 90 192 104 174" stroke-width="2.8" />
+    <path d="M110 268 C96 262 86 270 82 282" stroke-width="2.8" />
+    <path d="M158 170 C140 158 128 164 120 180" stroke-width="2.8" />
+    <path d="M158 170 C148 148 152 126 168 110" stroke-width="2.8" />
+    <path d="M178 168 C170 144 176 120 192 106" stroke-width="2.8" />
+    <path d="M178 168 C190 146 194 122 186 100" stroke-width="2.8" />
+
+    <!-- right outer twigs -->
+    <path d="M340 325 C352 318 360 324 364 336" stroke-width="2.8" />
+    <path d="M310 232 C330 222 344 228 352 244" stroke-width="2.8" />
+    <path d="M310 232 C320 208 318 184 302 166" stroke-width="2.8" />
+    <path d="M286 232 C300 214 298 192 284 174" stroke-width="2.8" />
+    <path d="M278 268 C292 262 302 270 306 282" stroke-width="2.8" />
+    <path d="M230 170 C248 158 260 164 268 180" stroke-width="2.8" />
+    <path d="M230 170 C240 148 236 126 220 110" stroke-width="2.8" />
+    <path d="M210 168 C218 144 212 120 196 106" stroke-width="2.8" />
+    <path d="M210 168 C198 146 194 122 202 100" stroke-width="2.8" />
+
+    <!-- crown tips -->
+    <path d="M172 150 C158 136 156 118 166 102" stroke-width="2.7" />
+    <path d="M172 150 C180 130 178 112 166 96" stroke-width="2.7" />
+    <path d="M216 150 C230 136 232 118 222 102" stroke-width="2.7" />
+    <path d="M216 150 C208 130 210 112 222 96" stroke-width="2.7" />
+    <path d="M194 140 C180 122 182 100 196 84" stroke-width="2.7" />
+    <path d="M194 140 C208 122 206 100 192 84" stroke-width="2.7" />
+    <path d="M194 140 C194 118 194 100 194 82" stroke-width="2.7" />
+
+    <!-- fine tips for round silhouette -->
+    <path d="M86 166 C74 154 76 140 90 130" stroke-width="2.4" />
+    <path d="M104 174 C96 158 100 144 114 134" stroke-width="2.4" />
+    <path d="M168 110 C156 98 158 84 170 74" stroke-width="2.4" />
+    <path d="M192 106 C186 90 190 76 202 68" stroke-width="2.4" />
+    <path d="M186 100 C178 86 182 72 196 64" stroke-width="2.4" />
+    <path d="M196 84 C188 72 192 60 204 54" stroke-width="2.4" />
+    <path d="M192 84 C200 72 198 60 188 54" stroke-width="2.4" />
+    <path d="M194 82 C194 68 194 58 194 48" stroke-width="2.4" />
+    <path d="M202 100 C210 86 206 72 194 64" stroke-width="2.4" />
+    <path d="M196 106 C202 90 198 76 186 68" stroke-width="2.4" />
+    <path d="M220 110 C232 98 230 84 218 74" stroke-width="2.4" />
+    <path d="M284 174 C292 158 288 144 274 134" stroke-width="2.4" />
+    <path d="M302 166 C314 154 312 140 298 130" stroke-width="2.4" />
+    <path d="M166 102 C156 90 160 78 172 70" stroke-width="2.4" />
+    <path d="M222 102 C232 90 228 78 216 70" stroke-width="2.4" />
+    <path d="M166 96 C160 84 166 72 178 66" stroke-width="2.4" />
+    <path d="M222 96 C228 84 222 72 210 66" stroke-width="2.4" />
+  </g>
+</svg>

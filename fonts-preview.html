@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Secondary sans options with Platypi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Akt:wght@400;500;600&family=Alumni+Sans:wght@400;500;600&family=Commissioner:wght@400;500;600&family=Datatype:wght@400;500;600&family=Finlandica:wght@400;500;600&family=Georama:wght@400;500;600&family=Glory:wght@400;500;600&family=Grandstander:wght@400;500;600&family=Miranda+Sans:wght@400;500;600&family=Platypi:wght@400;500;600&family=Pliant:wght@400;500;600&family=Sofia+Sans:wght@400;500;600&family=Strichpunkt+Sans:wght@400;500;600&family=Trispace:wght@400;500;600&family=Truculenta:opsz,wght@12..72,400;12..72,500;12..72,600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --plaster: #e6e2dc;
+        --stone: #d4cfc6;
+        --ink: #1f1c19;
+        --sap: #5c7a3a;
+        --terracotta: #c45c38;
+        --white: #f7f5f1;
+        --line: rgba(31, 28, 25, 0.14);
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        background: var(--plaster);
+        color: var(--ink);
+        font-family: system-ui, sans-serif;
+        line-height: 1.5;
+      }
+      .wrap {
+        max-width: 72rem;
+        margin: 0 auto;
+        padding: 2rem 1.25rem 3.5rem;
+      }
+      .intro h1 {
+        font-size: 1.75rem;
+        letter-spacing: -0.03em;
+        margin: 0 0 0.4rem;
+      }
+      .intro p {
+        margin: 0 0 1.75rem;
+        color: var(--sap);
+        max-width: 44rem;
+      }
+      .locked {
+        display: inline-block;
+        margin: 0 0 1.25rem;
+        padding: 0.35rem 0.75rem;
+        border-radius: 999px 0.9rem 999px 0.8rem;
+        background: rgba(196, 92, 56, 0.14);
+        color: var(--terracotta);
+        font-family: ui-monospace, monospace;
+        font-size: 0.78rem;
+        letter-spacing: 0.04em;
+      }
+      .grid {
+        display: grid;
+        gap: 1.25rem;
+      }
+      @media (min-width: 900px) {
+        .grid { grid-template-columns: 1fr 1fr; }
+      }
+      .card {
+        background: linear-gradient(165deg, var(--white) 0%, var(--stone) 100%);
+        border: 1px solid var(--line);
+        border-radius: 1.5rem 0.75rem 1.6rem 1rem;
+        padding: 1.35rem 1.4rem 1.5rem;
+      }
+      .meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem 0.75rem;
+        align-items: baseline;
+        margin-bottom: 1rem;
+      }
+      .tag {
+        font-family: ui-monospace, monospace;
+        font-size: 0.72rem;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--terracotta);
+      }
+      .pair-name {
+        font-size: 0.95rem;
+        font-weight: 600;
+        margin: 0;
+      }
+      .vibe {
+        width: 100%;
+        margin: 0;
+        font-size: 0.88rem;
+        color: var(--sap);
+      }
+      .sample {
+        border-top: 1px solid var(--line);
+        padding-top: 1.1rem;
+      }
+      .sample-role {
+        margin: 0 0 0.35rem;
+        font-size: 0.95rem;
+        color: var(--sap);
+      }
+      .sample-name {
+        margin: 0 0 0.55rem;
+        font-family: "Platypi", serif;
+        font-weight: 600;
+        font-size: clamp(1.9rem, 4.2vw, 2.5rem);
+        line-height: 1.05;
+        letter-spacing: -0.02em;
+      }
+      .sample-line {
+        margin: 0 0 0.85rem;
+        font-size: 0.95rem;
+        color: var(--sap);
+      }
+      .sample-body {
+        margin: 0 0 1rem;
+        font-size: 0.98rem;
+        max-width: 28rem;
+      }
+      .sample-nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.45rem;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+      .sample-nav li {
+        font-size: 0.85rem;
+        padding: 0.35rem 0.7rem;
+        border-radius: 999px 1rem 999px 0.85rem;
+        background: rgba(92, 122, 58, 0.12);
+        color: var(--sap);
+      }
+      .sample-nav li.is-active {
+        background: var(--terracotta);
+        color: var(--white);
+      }
+
+      .s1 .sample-role,
+      .s1 .sample-line,
+      .s1 .sample-body,
+      .s1 .sample-nav { font-family: "Pliant", sans-serif; }
+
+      .s2 .sample-role,
+      .s2 .sample-line,
+      .s2 .sample-body,
+      .s2 .sample-nav { font-family: "Strichpunkt Sans", sans-serif; }
+
+      .s3 .sample-role,
+      .s3 .sample-line,
+      .s3 .sample-body,
+      .s3 .sample-nav { font-family: "Finlandica", sans-serif; }
+
+      .s4 .sample-role,
+      .s4 .sample-line,
+      .s4 .sample-body,
+      .s4 .sample-nav { font-family: "Akt", sans-serif; }
+
+      .s5 .sample-role,
+      .s5 .sample-line,
+      .s5 .sample-body,
+      .s5 .sample-nav { font-family: "Miranda Sans", sans-serif; }
+
+      .s6 .sample-role,
+      .s6 .sample-line,
+      .s6 .sample-body,
+      .s6 .sample-nav { font-family: "Datatype", sans-serif; }
+
+      .s7 .sample-role,
+      .s7 .sample-line,
+      .s7 .sample-body,
+      .s7 .sample-nav { font-family: "Truculenta", sans-serif; }
+
+      .s8 .sample-role,
+      .s8 .sample-line,
+      .s8 .sample-body,
+      .s8 .sample-nav { font-family: "Trispace", sans-serif; }
+
+      .s9 .sample-role,
+      .s9 .sample-line,
+      .s9 .sample-body,
+      .s9 .sample-nav { font-family: "Glory", sans-serif; }
+
+      .s10 .sample-role,
+      .s10 .sample-line,
+      .s10 .sample-body,
+      .s10 .sample-nav { font-family: "Commissioner", sans-serif; }
+
+      .s11 .sample-role,
+      .s11 .sample-line,
+      .s11 .sample-body,
+      .s11 .sample-nav { font-family: "Georama", sans-serif; }
+
+      .s12 .sample-role,
+      .s12 .sample-line,
+      .s12 .sample-body,
+      .s12 .sample-nav { font-family: "Alumni Sans", sans-serif; font-weight: 500; }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="intro">
+        <h1>Secondary sans with Platypi</h1>
+        <p>
+          Name stays Platypi. Below are sans options from the Google Fonts Sans filter, skewed toward newer / less common faces for role, nav, and body.
+        </p>
+        <span class="locked">Locked display: Platypi</span>
+      </div>
+
+      <div class="grid">
+        <article class="card s1">
+          <div class="meta">
+            <span class="tag">S1</span>
+            <p class="pair-name">Pliant</p>
+            <p class="vibe">Newer sans. Soft enough to sit under Platypi without fighting it.</p>
+          </div>
+          <div class="sample">
+            <p class="sample-role">Experience Designer</p>
+            <p class="sample-name">Dhatri Jayanth</p>
+            <p class="sample-line">Design + Informatics @ UT Austin</p>
+            <p class="sample-body">Designing immersive and interactive experiences that make data tangible.</p>
+            <ul class="sample-nav"><li class="is-active">Projects</li><li>About</li><li>Resume</li></ul>
+          </div>
+        </article>
+
+        <article class="card s2">
+          <div class="meta">
+            <span class="tag">S2</span>
+            <p class="pair-name">Strichpunkt Sans</p>
+            <p class="vibe">Studio-designed. Clean, slightly sharp secondary voice.</p>
+          </div>
+          <div class="sample">
+            <p class="sample-role">Experience Designer</p>
+            <p class="sample-name">Dhatri Jayanth</p>
+            <p class="sample-line">Design + Informatics @ UT Austin</p>
+            <p class="sample-body">Designing immersive and interactive experiences that make data tangible.</p>
+            <ul class="sample-nav"><li class="is-active">Projects</li><li>About</li><li>Resume</li></ul>
+          </div>
+        </article>
+
+        <article class="card s3">
+          <div class="meta">
+            <span class="tag">S3</span>
+            <p class="pair-name">Finlandica</p>
+            <p class="vibe">Nordic text sans. Calm, uncommon on US portfolios.</p>
+          </div>
+          <div class="sample">
+            <p class="sample-role">Experience Designer</p>
+            <p class="sample-name">Dhatri Jayanth</p>
+            <p class="sample-line">Design + Informatics @ UT Austin</p>
+            <p class="sample-body">Designing immersive and interactive experiences that make data tangible.</p>
+            <ul class="sample-nav"><li class="is-active">Projects</li><li>About</li><li>Resume</li></ul>
+          </div>
+        </article>
+
+        <article class="card s4">
+          <div class="meta">
+            <span class="tag">S4</span>
+            <p class="pair-name">Akt</p>
+            <p class="vibe">Compact and contemporary. Good for nav density.</p>
+          </div>
+          <div class="sample">
+            <p class="sample-role">Experience Designer</p>
+            <p class="sample-name">Dhatri Jayanth</p>
+            <p class="sample-line">Design + Informatics @ UT Austin</p>
+            <p class="sample-body">Designing immersive and interactive experiences that make data tangible.</p>
+            <ul class="sample-nav"><li class="is-active">Projects</li><li>About</li><li>Resume</li></ul>
+          </div>
+        </article>
+
+        <article class="card s5">
+          <div class="meta">
+            <span class="tag">S5</span>
+            <p class="pair-name">Miranda Sans</p>
+            <p class="vibe">Friendly humanist. Softens Platypi’s quirk into readable UI.</p>
+          </div>
+          <div class="sample">
+            <p class="sample-role">Experience Designer</p>
+            <p class="sample-name">Dhatri Jayanth</p>
+            <p class="sample-line">Design + Informatics @ UT Austin</p>
+            <p class="sample-body">Designing immersive and interactive experiences that make data tangible.</p>
+            <ul class="sample-nav"><li class="is-active">Projects</li><li>About</li><li>Resume</li></ul>
+          </div>
+        </article>
+
+        <article class="card s6">
+          <div class="meta">
+            <span class="tag">S6</span>
+            <p class="pair-name">Datatype</p>
+            <p class="vibe">Technical tone. Fits informatics without going full mono.</p>
+          </div>
+          <div class="sample">
+            <p class="sample-role">Experience Designer</p>
+            <p class="sample-name">Dhatri Jayanth</p>
+            <p class="sample-line">Design + Informatics @ UT Austin</p>
+            <p class="sample-body">Designing immersive and interactive experiences that make data tangible.</p>
+            <ul class="sample-nav"><li class="is-active">Projects</li><li>About</li><li>Resume</li></ul>
+          </div>
+        </article>
+
+        <article class="card s7">
+          <div class="meta">
+            <span class="tag">S7</span>
+            <p class="pair-name">Truculenta</p>
+            <p class="vibe">Variable and a little odd. More personality than Inter-family sanses.</p>
+          </div>
+          <div class="sample">
+            <p class="sample-role">Experience Designer</p>
+            <p class="sample-name">Dhatri Jayanth</p>
+            <p class="sample-line">Design + Informatics @ UT Austin</p>
+            <p class="sample-body">Designing immersive and interactive experiences that make data tangible.</p>
+            <ul class="sample-nav"><li class="is-active">Projects</li><li>About</li><li>Resume</li></ul>
+          </div>
+        </article>
+
+        <article class="card s8">
+          <div class="meta">
+            <span class="tag">S8</span>
+            <p class="pair-name">Trispace</p>
+            <p class="vibe">Geometric with width play. Feels designed, not default.</p>
+          </div>
+          <div class="sample">
+            <p class="sample-role">Experience Designer</p>
+            <p class="sample-name">Dhatri Jayanth</p>
+            <p class="sample-line">Design + Informatics @ UT Austin</p>
+            <p class="sample-body">Designing immersive and interactive experiences that make data tangible.</p>
+            <ul class="sample-nav"><li class="is-active">Projects</li><li>About</li><li>Resume</li></ul>
+          </div>
+        </article>
+
+        <article class="card s9">
+          <div class="meta">
+            <span class="tag">S9</span>
+            <p class="pair-name">Glory</p>
+            <p class="vibe">Rounded soft sans. Harmonizes with Platypi’s warmth.</p>
+          </div>
+          <div class="sample">
+            <p class="sample-role">Experience Designer</p>
+            <p class="sample-name">Dhatri Jayanth</p>
+            <p class="sample-line">Design + Informatics @ UT Austin</p>
+            <p class="sample-body">Designing immersive and interactive experiences that make data tangible.</p>
+            <ul class="sample-nav"><li class="is-active">Projects</li><li>About</li><li>Resume</li></ul>
+          </div>
+        </article>
+
+        <article class="card s10">
+          <div class="meta">
+            <span class="tag">S10</span>
+            <p class="pair-name">Commissioner</p>
+            <p class="vibe">Soft grotesk. Quieter than Trend Deck Sans, still not Poppins.</p>
+          </div>
+          <div class="sample">
+            <p class="sample-role">Experience Designer</p>
+            <p class="sample-name">Dhatri Jayanth</p>
+            <p class="sample-line">Design + Informatics @ UT Austin</p>
+            <p class="sample-body">Designing immersive and interactive experiences that make data tangible.</p>
+            <ul class="sample-nav"><li class="is-active">Projects</li><li>About</li><li>Resume</li></ul>
+          </div>
+        </article>
+
+        <article class="card s11">
+          <div class="meta">
+            <span class="tag">S11</span>
+            <p class="pair-name">Georama</p>
+            <p class="vibe">Slightly quirky geometric. Good contrast under a soft serif name.</p>
+          </div>
+          <div class="sample">
+            <p class="sample-role">Experience Designer</p>
+            <p class="sample-name">Dhatri Jayanth</p>
+            <p class="sample-line">Design + Informatics @ UT Austin</p>
+            <p class="sample-body">Designing immersive and interactive experiences that make data tangible.</p>
+            <ul class="sample-nav"><li class="is-active">Projects</li><li>About</li><li>Resume</li></ul>
+          </div>
+        </article>
+
+        <article class="card s12">
+          <div class="meta">
+            <span class="tag">S12</span>
+            <p class="pair-name">Alumni Sans</p>
+            <p class="vibe">Condensed academic energy. Strong for nav labels.</p>
+          </div>
+          <div class="sample">
+            <p class="sample-role">Experience Designer</p>
+            <p class="sample-name">Dhatri Jayanth</p>
+            <p class="sample-line">Design + Informatics @ UT Austin</p>
+            <p class="sample-body">Designing immersive and interactive experiences that make data tangible.</p>
+            <ul class="sample-nav"><li class="is-active">Projects</li><li>About</li><li>Resume</li></ul>
+          </div>
+        </article>
+      </div>
+    </div>
+  </body>
+</html>

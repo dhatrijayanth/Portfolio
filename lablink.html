@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LabLink - Dhatri Jayanth</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Georama:wght@400;500;600&family=Platypi:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="case-study.css" />
+  </head>
+  <body>
+    <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+      <span></span>
+    </button>
+    <div class="nav-backdrop"></div>
+
+    <div class="site">
+      <aside class="sidebar" aria-label="Primary">
+        <a class="brand" href="index.html">
+          <span class="brand-name">Dhatri Jayanth</span>
+          <span class="brand-role">Experience Designer</span>
+        </a>
+        <nav class="nav">
+          <a class="is-active" href="projects.html">Projects</a>
+          <a href="about.html">About</a>
+          <a href="resume.html">Resume</a>
+          <a href="contact.html">Contact</a>
+          <a href="art.html">Art</a>
+        </nav>
+      </aside>
+
+      <main class="main">
+        <article class="page cs">
+          <a class="cs-back" href="projects.html">Back to work</a>
+
+          <p class="page-label">Product design</p>
+          <h1 class="page-title">LabLink</h1>
+          <p class="cs-summary">
+            A platform that connects students seeking research roles with professors buried in outreach.
+          </p>
+
+          <div class="cs-hero-media">
+            <div
+              class="cs-carousel"
+              data-carousel
+              tabindex="0"
+              aria-roledescription="carousel"
+              aria-label="LabLink hero media"
+            >
+              <div class="cs-carousel__viewport">
+                <ul class="cs-carousel__track">
+                  <li class="cs-carousel__slide">
+                    <div class="cs-ph cs-ph--hero" role="img" aria-label="Placeholder for LabLink hero product shot">
+                      [IMAGE: LabLink hero, student and professor views side by side]
+                    </div>
+                  </li>
+                  <li class="cs-carousel__slide">
+                    <div class="cs-ph cs-ph--hero" role="img" aria-label="Placeholder for LabLink product walkthrough video">
+                      [VIDEO: muted looping walkthrough of core flows, with poster]
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="cs-carousel__controls">
+                <div class="cs-carousel__nav">
+                  <button type="button" class="cs-carousel__btn cs-carousel__btn--prev" aria-label="Previous slide">‹</button>
+                  <button type="button" class="cs-carousel__btn cs-carousel__btn--next" aria-label="Next slide">›</button>
+                </div>
+                <div class="cs-carousel__dots" aria-label="Slide controls"></div>
+              </div>
+              <p class="cs-carousel__status" aria-live="polite"></p>
+            </div>
+          </div>
+
+          <dl class="cs-meta">
+            <div>
+              <dt>Role</dt>
+              <dd>Product designer. I designed the experience. Teammates handled technical development.</dd>
+            </div>
+            <div>
+              <dt>Team</dt>
+              <dd>[TEAM SIZE and roles]</dd>
+            </div>
+            <div>
+              <dt>Timeline</dt>
+              <dd>One semester, [SEMESTER AND YEAR]</dd>
+            </div>
+            <div>
+              <dt>Tools</dt>
+              <dd>[TOOLS]</dd>
+            </div>
+          </dl>
+
+          <section class="cs-section cs-section--wide" aria-labelledby="lablink-overview">
+            <p class="cs-eyebrow">Overview</p>
+            <h2 id="lablink-overview">TL;DR</h2>
+            <div class="cs-overview">
+              <div class="cs-overview__item">
+                <span class="cs-overview__label">The problem</span>
+                <p>
+                  Students struggle to find open research roles. Professors get flooded with cold emails that are hard to sort and answer.
+                </p>
+              </div>
+              <div class="cs-overview__item">
+                <span class="cs-overview__label">What I did</span>
+                <p>
+                  I designed a two-sided product experience that matches student interest with lab openings and gives professors a clearer intake path.
+                </p>
+              </div>
+              <div class="cs-overview__item">
+                <span class="cs-overview__label">The outcome</span>
+                <p>
+                  [OUTCOME: what shipped and who used it]
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section class="cs-section" aria-labelledby="lablink-context">
+            <p class="cs-eyebrow">Context</p>
+            <h2 id="lablink-context">Context and challenge</h2>
+            <p>
+              Undergraduate and early graduate students want research experience, but openings are scattered across department pages, personal sites, and word of mouth. Professors want capable students, yet their inboxes are not built for recruiting.
+            </p>
+            <p>
+              The product had to serve both sides without making either group do work that felt unfair.
+            </p>
+            <blockquote class="cs-pullquote">
+              One system should reduce noise for professors while making research opportunities findable for students.
+            </blockquote>
+          </section>
+
+          <section class="cs-section cs-section--wide" aria-labelledby="lablink-goals">
+            <p class="cs-eyebrow">Goals</p>
+            <h2 id="lablink-goals">Goals</h2>
+            <ol class="cs-goals">
+              <li>Help students discover labs that fit their skills and interests without endless cold outreach.</li>
+              <li>Give professors a structured way to post openings and review interested students.</li>
+              <li>Keep the handoff between design and engineering clear enough to ship in one semester.</li>
+            </ol>
+          </section>
+
+          <section class="cs-section cs-section--wide" aria-labelledby="lablink-research">
+            <p class="cs-eyebrow">Research</p>
+            <h2 id="lablink-research">Research and insights</h2>
+            <p>
+              Methods: [RESEARCH METHODS, for example interviews, surveys, competitive analysis].
+            </p>
+
+            <div class="cs-insight-group">
+              <h3>Student insights</h3>
+              <div class="cs-insight-grid">
+                <article class="cs-insight">
+                  <h3>[INSIGHT HEADLINE: student 1]</h3>
+                  <p>[Supporting sentence about how students search for and approach research roles.]</p>
+                </article>
+                <article class="cs-insight">
+                  <h3>[INSIGHT HEADLINE: student 2]</h3>
+                  <p>[Supporting sentence about barriers, timing, or confidence.]</p>
+                </article>
+                <article class="cs-insight">
+                  <h3>[INSIGHT HEADLINE: student 3]</h3>
+                  <p>[Supporting sentence about what would make applying feel clearer.]</p>
+                </article>
+              </div>
+            </div>
+
+            <div class="cs-insight-group">
+              <h3>Professor insights</h3>
+              <div class="cs-insight-grid">
+                <article class="cs-insight">
+                  <h3>[INSIGHT HEADLINE: professor 1]</h3>
+                  <p>[Supporting sentence about inbox overload or how openings get posted today.]</p>
+                </article>
+                <article class="cs-insight">
+                  <h3>[INSIGHT HEADLINE: professor 2]</h3>
+                  <p>[Supporting sentence about what they need to evaluate a student quickly.]</p>
+                </article>
+                <article class="cs-insight">
+                  <h3>[INSIGHT HEADLINE: professor 3]</h3>
+                  <p>[Supporting sentence about trust, fit, or administrative friction.]</p>
+                </article>
+              </div>
+            </div>
+          </section>
+
+          <section class="cs-section cs-section--wide" aria-labelledby="lablink-ideation">
+            <p class="cs-eyebrow">Ideation</p>
+            <h2 id="lablink-ideation">Ideation and structure</h2>
+            <p>
+              I mapped separate journeys for students and professors, then looked for the shared moments where matching should happen.
+            </p>
+
+            <div class="cs-carousel" data-carousel tabindex="0" aria-roledescription="carousel" aria-label="LabLink user flows">
+              <div class="cs-carousel__viewport">
+                <ul class="cs-carousel__track">
+                  <li class="cs-carousel__slide">
+                    <div class="cs-ph cs-ph--wide" role="img" aria-label="Placeholder for student user flow">
+                      [IMAGE: student user flow]
+                    </div>
+                  </li>
+                  <li class="cs-carousel__slide">
+                    <div class="cs-ph cs-ph--wide" role="img" aria-label="Placeholder for professor user flow">
+                      [IMAGE: professor user flow]
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="cs-carousel__controls">
+                <div class="cs-carousel__nav">
+                  <button type="button" class="cs-carousel__btn cs-carousel__btn--prev" aria-label="Previous slide">‹</button>
+                  <button type="button" class="cs-carousel__btn cs-carousel__btn--next" aria-label="Next slide">›</button>
+                </div>
+                <div class="cs-carousel__dots" aria-label="Slide controls"></div>
+              </div>
+              <p class="cs-carousel__status" aria-live="polite"></p>
+            </div>
+            <p class="cs-caption">Flows for both sides of the marketplace, shown as separate diagrams.</p>
+
+            <div class="cs-carousel" data-carousel tabindex="0" aria-roledescription="carousel" aria-label="LabLink sketches and wireframes" style="margin-top: 1.5rem">
+              <div class="cs-carousel__viewport">
+                <ul class="cs-carousel__track">
+                  <li class="cs-carousel__slide">
+                    <div class="cs-ph cs-ph--wide" role="img" aria-label="Placeholder for early LabLink sketches">
+                      [IMAGE: early sketches exploring browse versus apply flows]
+                    </div>
+                  </li>
+                  <li class="cs-carousel__slide">
+                    <div class="cs-ph cs-ph--wide" role="img" aria-label="Placeholder for LabLink wireframes">
+                      [IMAGE: wireframes for discovery, profile, and inbox review]
+                    </div>
+                  </li>
+                  <li class="cs-carousel__slide">
+                    <div class="cs-ph cs-ph--wide" role="img" aria-label="Placeholder for LabLink mid-fidelity screens">
+                      [IMAGE: mid-fidelity screens refining information hierarchy]
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="cs-carousel__controls">
+                <div class="cs-carousel__nav">
+                  <button type="button" class="cs-carousel__btn cs-carousel__btn--prev" aria-label="Previous slide">‹</button>
+                  <button type="button" class="cs-carousel__btn cs-carousel__btn--next" aria-label="Next slide">›</button>
+                </div>
+                <div class="cs-carousel__dots" aria-label="Slide controls"></div>
+              </div>
+              <p class="cs-carousel__status" aria-live="polite"></p>
+            </div>
+            <p class="cs-caption">Each frame shows a decision about structure before visual polish.</p>
+          </section>
+
+          <section class="cs-section cs-section--wide" aria-labelledby="lablink-decisions">
+            <p class="cs-eyebrow">Decisions</p>
+            <h2 id="lablink-decisions">Design decisions</h2>
+
+            <div class="cs-decision">
+              <h3>Two-sided matching without a noisy feed</h3>
+              <span class="cs-decision__label">The decision</span>
+              <p>
+                I designed distinct student and professor surfaces that meet at openings, interest signals, and review, instead of one shared social feed.
+              </p>
+              <span class="cs-decision__label">Why</span>
+              <p>
+                Students need discovery. Professors need triage. A single feed would optimize for neither.
+              </p>
+              <span class="cs-decision__label">What I tried first</span>
+              <p>
+                [OPTIONAL: earlier concept that treated both sides more like a messaging board]
+              </p>
+            </div>
+
+            <div class="cs-decision">
+              <h3>Engineering constraints changed the handoff</h3>
+              <span class="cs-decision__label">The decision</span>
+              <p>
+                [DECISION: which interaction or screen set changed because of technical limits]
+              </p>
+              <span class="cs-decision__label">Why</span>
+              <p>
+                Shipping in one semester meant designs had to map cleanly to what developers could build. I adjusted scope and annotated flows for handoff.
+              </p>
+              <span class="cs-decision__label">What I tried first</span>
+              <p>
+                [OPTIONAL: richer interaction that was simplified for build]
+              </p>
+              <div class="cs-split" style="margin-top: 1rem">
+                <div>
+                  <div class="cs-ph cs-ph--pair" role="img" aria-label="Placeholder for design before engineering constraint">
+                    [IMAGE: design before constraint]
+                  </div>
+                  <p class="cs-caption">Before</p>
+                </div>
+                <div>
+                  <div class="cs-ph cs-ph--pair" role="img" aria-label="Placeholder for design after engineering constraint">
+                    [IMAGE: design after constraint]
+                  </div>
+                  <p class="cs-caption">After</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="cs-decision">
+              <h3>Developer handoff</h3>
+              <span class="cs-decision__label">The decision</span>
+              <p>
+                I packaged screens, states, and edge cases so developers could implement without guessing critical flows.
+              </p>
+              <span class="cs-decision__label">Why</span>
+              <p>
+                Clear specs reduced rework and kept student and professor paths aligned in the build.
+              </p>
+            </div>
+          </section>
+
+          <section class="cs-section cs-section--wide" aria-labelledby="lablink-final">
+            <p class="cs-eyebrow">Final design</p>
+            <h2 id="lablink-final">Final design</h2>
+            <p>
+              Final screens are shown next to the built product so the gap between design and implementation stays visible.
+            </p>
+
+            <div class="cs-feature-block">
+              <h3>Student discovery and interest</h3>
+              <p>Browse openings, understand fit, and express interest without writing a cold email from scratch.</p>
+              <div class="cs-carousel" data-carousel tabindex="0" aria-roledescription="carousel" aria-label="Student discovery screens">
+                <div class="cs-carousel__viewport">
+                  <ul class="cs-carousel__track">
+                    <li class="cs-carousel__slide">
+                      <div class="cs-ph cs-ph--wide" role="img" aria-label="Placeholder for designed student discovery screens">
+                        [IMAGE: designed student discovery screens]
+                      </div>
+                    </li>
+                    <li class="cs-carousel__slide">
+                      <div class="cs-ph cs-ph--wide" role="img" aria-label="Placeholder for built student discovery screens">
+                        [IMAGE: built product screens for student discovery]
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="cs-carousel__controls">
+                  <div class="cs-carousel__nav">
+                    <button type="button" class="cs-carousel__btn cs-carousel__btn--prev" aria-label="Previous slide">‹</button>
+                    <button type="button" class="cs-carousel__btn cs-carousel__btn--next" aria-label="Next slide">›</button>
+                  </div>
+                  <div class="cs-carousel__dots" aria-label="Slide controls"></div>
+                </div>
+                <p class="cs-carousel__status" aria-live="polite"></p>
+              </div>
+            </div>
+
+            <div class="cs-feature-block">
+              <h3>Professor posting and review</h3>
+              <p>Create openings and review interested students with less inbox chaos.</p>
+              <div class="cs-carousel" data-carousel tabindex="0" aria-roledescription="carousel" aria-label="Professor review screens">
+                <div class="cs-carousel__viewport">
+                  <ul class="cs-carousel__track">
+                    <li class="cs-carousel__slide">
+                      <div class="cs-ph cs-ph--wide" role="img" aria-label="Placeholder for designed professor screens">
+                        [IMAGE: designed professor posting and review screens]
+                      </div>
+                    </li>
+                    <li class="cs-carousel__slide">
+                      <div class="cs-ph cs-ph--wide" role="img" aria-label="Placeholder for built professor screens">
+                        [IMAGE: built product screens for professor review]
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="cs-carousel__controls">
+                  <div class="cs-carousel__nav">
+                    <button type="button" class="cs-carousel__btn cs-carousel__btn--prev" aria-label="Previous slide">‹</button>
+                    <button type="button" class="cs-carousel__btn cs-carousel__btn--next" aria-label="Next slide">›</button>
+                  </div>
+                  <div class="cs-carousel__dots" aria-label="Slide controls"></div>
+                </div>
+                <p class="cs-carousel__status" aria-live="polite"></p>
+              </div>
+            </div>
+
+            <p style="margin-top: 1.5rem">
+              <a class="btn" href="[PROTOTYPE OR LIVE LINK]">View prototype</a>
+            </p>
+
+            <div class="cs-credits">
+              <strong>Credits.</strong> Development by [DEVELOPER NAMES OR ROLES]. Product design by me.
+            </div>
+          </section>
+
+          <section class="cs-section cs-section--wide" aria-labelledby="lablink-results">
+            <p class="cs-eyebrow">Results</p>
+            <h2 id="lablink-results">Results and impact</h2>
+            <ul class="cs-stats">
+              <li>
+                <span class="cs-stats__num">[METRIC]</span>
+                <span class="cs-stats__label">[Label, for example students who used LabLink]</span>
+              </li>
+              <li>
+                <span class="cs-stats__num">[METRIC]</span>
+                <span class="cs-stats__label">[Label, for example openings posted]</span>
+              </li>
+              <li>
+                <span class="cs-stats__num">[METRIC]</span>
+                <span class="cs-stats__label">[Label, for example matches or responses]</span>
+              </li>
+            </ul>
+            <blockquote class="cs-quote">
+              [QUOTE: feedback from a student or professor, if available]
+              <cite>[Attribution]</cite>
+            </blockquote>
+            <p>
+              If numbers are still pending, describe what shipped and who used it here.
+            </p>
+          </section>
+
+          <section class="cs-section" aria-labelledby="lablink-reflection">
+            <p class="cs-eyebrow">Reflection</p>
+            <h2 id="lablink-reflection">Reflection</h2>
+            <h3>What I learned</h3>
+            <ul>
+              <li>Two-sided products need research that treats each side as a full user, not a secondary persona.</li>
+              <li>Design quality only ships when handoff matches engineering reality.</li>
+              <li>[LEARNING 3]</li>
+            </ul>
+            <h3>What I would do next</h3>
+            <ul>
+              <li>[NEXT STEP 1]</li>
+              <li>[NEXT STEP 2]</li>
+              <li>[NEXT STEP 3]</li>
+            </ul>
+          </section>
+
+          <a class="cs-next" href="storywall.html">
+            <span>
+              <span class="cs-next__label">Next project</span>
+              <p class="cs-next__title">StoryWall</p>
+            </span>
+            <span class="cs-next__arrow" aria-hidden="true">→</span>
+          </a>
+        </article>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="case-study.js"></script>
+  </body>
+</html>

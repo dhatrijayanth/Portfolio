@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact - Dhatri Jayanth</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Georama:wght@400;500;600&family=Platypi:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+      <span></span>
+    </button>
+    <div class="nav-backdrop"></div>
+
+    <div class="site">
+      <aside class="sidebar" aria-label="Primary">
+        <a class="brand" href="index.html">
+          <span class="brand-name">Dhatri Jayanth</span>
+          <span class="brand-role">Experience Designer</span>
+        </a>
+        <nav class="nav">
+          <a href="projects.html">Projects</a>
+          <a href="about.html">About</a>
+          <a href="resume.html">Resume</a>
+          <a class="is-active" href="contact.html">Contact</a>
+          <a href="art.html">Art</a>
+        </nav>
+      </aside>
+
+      <main class="main">
+        <article class="page">
+          <p class="page-label">Contact</p>
+          <h1 class="page-title">Let's talk.</h1>
+          <p class="page-lead">
+            Collaborations, immersive briefs, and product work. Reach out and tell me what you're building.
+          </p>
+
+          <div class="contact-layout">
+            <form class="contact-form reveal" action="mailto:dj24997@utexas.edu" method="post" enctype="text/plain">
+              <div class="field">
+                <label for="name">Name</label>
+                <input id="name" name="name" type="text" autocomplete="name" required />
+              </div>
+              <div class="field">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" autocomplete="email" required />
+              </div>
+              <div class="field">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" required></textarea>
+              </div>
+              <button class="btn" type="submit">Send message</button>
+              <p class="form-note">
+                Or email me directly at
+                <a href="mailto:dj24997@utexas.edu">dj24997@utexas.edu</a>.
+              </p>
+            </form>
+
+            <div class="contact-links reveal">
+              <a href="mailto:dj24997@utexas.edu">dj24997@utexas.edu</a>
+              <a href="tel:+17372879447">(737) 287-9447</a>
+              <a href="https://www.linkedin.com/in/dhatri-jayanth" target="_blank" rel="noopener noreferrer"
+                >LinkedIn</a
+              >
+            </div>
+          </div>
+        </article>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

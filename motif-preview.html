@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hero motif preview: 1 vs 4</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Georama:wght@400;500;600&family=Platypi:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --plaster: #e6e2dc;
+        --stone: #d4cfc6;
+        --ink: #1f1c19;
+        --sap: #5c7a3a;
+        --sap-soft: #7a9a52;
+        --terracotta: #c45c38;
+        --terracotta-soft: #d47858;
+        --white: #f7f5f1;
+        --line: rgba(31, 28, 25, 0.14);
+        --font-sans: "Georama", sans-serif;
+        --font-display: "Platypi", serif;
+        --ease: cubic-bezier(0.22, 1, 0.36, 1);
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        margin: 0;
+        font-family: var(--font-sans);
+        color: var(--ink);
+        background: var(--plaster);
+        line-height: 1.5;
+      }
+
+      .wrap {
+        max-width: 70rem;
+        margin: 0 auto;
+        padding: 1.75rem 1.25rem 3rem;
+      }
+
+      .intro h1 {
+        font-family: var(--font-display);
+        font-size: 1.75rem;
+        margin: 0 0 0.4rem;
+        letter-spacing: -0.03em;
+      }
+
+      .intro p {
+        margin: 0 0 1.5rem;
+        color: var(--sap);
+        max-width: 40rem;
+      }
+
+      .grid {
+        display: grid;
+        gap: 1.25rem;
+      }
+
+      @media (min-width: 900px) {
+        .grid { grid-template-columns: 1fr 1fr; }
+      }
+
+      .option {
+        border: 1px solid var(--line);
+        border-radius: 1.5rem 0.75rem 1.6rem 1rem;
+        overflow: hidden;
+        background: var(--white);
+      }
+
+      .option-meta {
+        padding: 1rem 1.15rem 0.85rem;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .option-meta .tag {
+        font-size: 0.72rem;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--terracotta);
+        margin: 0 0 0.25rem;
+      }
+
+      .option-meta h2 {
+        font-size: 1.05rem;
+        margin: 0 0 0.3rem;
+      }
+
+      .option-meta p {
+        margin: 0;
+        font-size: 0.88rem;
+        color: var(--sap);
+      }
+
+      .hero-mock {
+        position: relative;
+        min-height: 28rem;
+        padding: 1.75rem 1.5rem 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        overflow: hidden;
+        background:
+          radial-gradient(ellipse 80% 60% at 85% 25%, rgba(92, 122, 58, 0.22), transparent 55%),
+          radial-gradient(ellipse 70% 50% at 15% 85%, rgba(196, 92, 56, 0.18), transparent 50%),
+          linear-gradient(145deg, #ddd6cc 0%, var(--plaster) 45%, #cfc8bc 100%);
+      }
+
+      .hero-role {
+        font-size: 0.95rem;
+        color: var(--sap);
+        margin: 0 0 0.35rem;
+        letter-spacing: 0.04em;
+      }
+
+      .hero-name {
+        font-family: var(--font-display);
+        font-size: clamp(1.8rem, 4vw, 2.4rem);
+        font-weight: 600;
+        letter-spacing: -0.03em;
+        line-height: 1.05;
+        margin: 0 0 0.55rem;
+      }
+
+      .hero-line {
+        font-size: 0.85rem;
+        color: var(--sap);
+        margin: 0 0 0.35rem;
+      }
+
+      .hero-tagline {
+        font-size: 0.9rem;
+        margin: 0;
+        max-width: 22rem;
+      }
+
+      /* Shared leaf motif */
+      .motif-leaf {
+        position: absolute;
+        width: var(--w, 4.5rem);
+        height: var(--h, 6.5rem);
+        border-radius: 2% 90% 10% 90%;
+        transform: translate(-50%, -50%) rotate(var(--r, 0deg));
+        transform-origin: 50% 80%;
+        animation: drift 14s ease-in-out infinite;
+        animation-delay: var(--d, 0s);
+      }
+
+      .motif-leaf::after {
+        content: "";
+        position: absolute;
+        left: 48%;
+        top: 12%;
+        bottom: 10%;
+        width: 1px;
+        background: rgba(31, 28, 25, 0.2);
+        transform: translateX(-50%);
+      }
+
+      .motif-leaf--sap {
+        background: linear-gradient(160deg, var(--sap-soft), var(--sap));
+      }
+
+      .motif-leaf--terra {
+        background: linear-gradient(160deg, var(--terracotta-soft), var(--terracotta));
+      }
+
+      @keyframes drift {
+        0%, 100% { transform: translate(-50%, -50%) rotate(var(--r, 0deg)); }
+        50% { transform: translate(calc(-50% + 6px), calc(-50% - 10px)) rotate(calc(var(--r, 0deg) + 6deg)); }
+      }
+
+      /* Option 1: fillable leaf frames */
+      .leaf-frames {
+        position: relative;
+        height: 11.5rem;
+        margin: 0 0 1.25rem;
+        max-width: 18rem;
+      }
+
+      .leaf-frame {
+        position: absolute;
+        margin: 0;
+        width: var(--w);
+        height: var(--h);
+        left: var(--x);
+        top: var(--y);
+        border-radius: 2% 90% 10% 90%;
+        transform: rotate(var(--r));
+        overflow: hidden;
+        display: grid;
+        place-items: center;
+        box-shadow: 0 10px 28px rgba(31, 28, 25, 0.12);
+        border: 1.5px solid rgba(255, 255, 255, 0.35);
+      }
+
+      .leaf-frame--a {
+        --w: 7.5rem;
+        --h: 10.5rem;
+        --x: 0%;
+        --y: 8%;
+        --r: -22deg;
+        background:
+          linear-gradient(160deg, rgba(255,255,255,0.2), transparent 40%),
+          linear-gradient(160deg, var(--sap-soft), var(--sap));
+        z-index: 2;
+      }
+
+      .leaf-frame--b {
+        --w: 5.5rem;
+        --h: 7.8rem;
+        --x: 42%;
+        --y: 0%;
+        --r: 18deg;
+        background:
+          linear-gradient(160deg, rgba(255,255,255,0.18), transparent 40%),
+          linear-gradient(160deg, var(--terracotta-soft), var(--terracotta));
+        z-index: 3;
+      }
+
+      .leaf-frame--c {
+        --w: 4.8rem;
+        --h: 6.8rem;
+        --x: 58%;
+        --y: 38%;
+        --r: -8deg;
+        background:
+          linear-gradient(160deg, rgba(255,255,255,0.15), transparent 40%),
+          linear-gradient(155deg, #b8c49a, #6f8448);
+        z-index: 1;
+      }
+
+      .leaf-frame__label {
+        font-size: 0.62rem;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: rgba(247, 245, 241, 0.9);
+        text-align: center;
+        padding: 0.4rem;
+        line-height: 1.3;
+        transform: rotate(calc(var(--r) * -1));
+      }
+
+      .leaf-frame img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      /* Option 4: decorative only */
+      .deco-cluster {
+        position: absolute;
+        left: 1.25rem;
+        top: 1.5rem;
+        width: 14rem;
+        height: 12rem;
+        pointer-events: none;
+      }
+
+      .deco-cluster .motif-leaf:nth-child(1) {
+        left: 22%; top: 28%; --w: 3.8rem; --h: 5.6rem; --r: -28deg; --d: 0s; opacity: 0.78;
+      }
+      .deco-cluster .motif-leaf:nth-child(2) {
+        left: 52%; top: 18%; --w: 3.1rem; --h: 4.6rem; --r: 22deg; --d: -3s; opacity: 0.72;
+      }
+      .deco-cluster .motif-leaf:nth-child(3) {
+        left: 72%; top: 42%; --w: 2.6rem; --h: 3.9rem; --r: 48deg; --d: -6s; opacity: 0.7;
+      }
+      .deco-cluster .motif-leaf:nth-child(4) {
+        left: 38%; top: 58%; --w: 3.4rem; --h: 5rem; --r: -12deg; --d: -2s; opacity: 0.65;
+      }
+      .deco-cluster .motif-leaf:nth-child(5) {
+        left: 18%; top: 62%; --w: 2.2rem; --h: 3.3rem; --r: 35deg; --d: -5s; opacity: 0.68;
+      }
+      .deco-cluster .motif-leaf:nth-child(6) {
+        left: 62%; top: 68%; --w: 2.8rem; --h: 4.1rem; --r: -40deg; --d: -7s; opacity: 0.62;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .motif-leaf { animation: none; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="intro">
+        <h1>Hero motif preview</h1>
+        <p>
+          Option 1 keeps fillable media in leaf shapes. Option 4 is decoration only, no image boxes.
+          Pick one and I’ll apply it to the real homepage.
+        </p>
+      </div>
+
+      <div class="grid">
+        <article class="option">
+          <div class="option-meta">
+            <p class="tag">Option 1</p>
+            <h2>Leaf frames</h2>
+            <p>Large leaf-shaped windows you can fill with photos or video.</p>
+          </div>
+          <div class="hero-mock">
+            <div class="leaf-frames" aria-label="Leaf media frames">
+              <figure class="leaf-frame leaf-frame--a">
+                <span class="leaf-frame__label">Image</span>
+              </figure>
+              <figure class="leaf-frame leaf-frame--b">
+                <span class="leaf-frame__label">Image</span>
+              </figure>
+              <figure class="leaf-frame leaf-frame--c">
+                <span class="leaf-frame__label">Image</span>
+              </figure>
+            </div>
+            <p class="hero-role">Experience Designer</p>
+            <h2 class="hero-name">Dhatri Jayanth</h2>
+            <p class="hero-line">Design + Informatics @ UT Austin</p>
+            <p class="hero-tagline">Designing immersive and interactive experiences that make data tangible</p>
+          </div>
+        </article>
+
+        <article class="option">
+          <div class="option-meta">
+            <p class="tag">Option 4</p>
+            <h2>Decorative leaves only</h2>
+            <p>No media frames. Motifs fill the empty space and stay part of the tree language.</p>
+          </div>
+          <div class="hero-mock">
+            <div class="deco-cluster" aria-hidden="true">
+              <span class="motif-leaf motif-leaf--sap"></span>
+              <span class="motif-leaf motif-leaf--terra"></span>
+              <span class="motif-leaf motif-leaf--sap"></span>
+              <span class="motif-leaf motif-leaf--terra"></span>
+              <span class="motif-leaf motif-leaf--sap"></span>
+              <span class="motif-leaf motif-leaf--terra"></span>
+            </div>
+            <p class="hero-role">Experience Designer</p>
+            <h2 class="hero-name">Dhatri Jayanth</h2>
+            <p class="hero-line">Design + Informatics @ UT Austin</p>
+            <p class="hero-tagline">Designing immersive and interactive experiences that make data tangible</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </body>
+</html>

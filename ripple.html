@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ripple - Dhatri Jayanth</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Georama:wght@400;500;600&family=Platypi:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="case-study.css" />
+  </head>
+  <body>
+    <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+      <span></span>
+    </button>
+    <div class="nav-backdrop"></div>
+
+    <div class="site">
+      <aside class="sidebar" aria-label="Primary">
+        <a class="brand" href="index.html">
+          <span class="brand-name">Dhatri Jayanth</span>
+          <span class="brand-role">Experience Designer</span>
+        </a>
+        <nav class="nav">
+          <a class="is-active" href="projects.html">Projects</a>
+          <a href="about.html">About</a>
+          <a href="resume.html">Resume</a>
+          <a href="contact.html">Contact</a>
+          <a href="art.html">Art</a>
+        </nav>
+      </aside>
+
+      <main class="main">
+        <article class="page cs">
+          <a class="cs-back" href="projects.html">Back to work</a>
+          <span class="cs-badge">In progress</span>
+
+          <p class="page-label">Discursive design</p>
+          <h1 class="page-title">Ripple</h1>
+          <p class="cs-summary">
+            An interactive pond that learns what you like, then reconnects to live Austin weather for variety.
+          </p>
+
+          <div class="cs-hero-media">
+            <div
+              class="cs-carousel"
+              data-carousel
+              tabindex="0"
+              aria-roledescription="carousel"
+              aria-label="Ripple hero media"
+            >
+              <div class="cs-carousel__viewport">
+                <ul class="cs-carousel__track">
+                  <li class="cs-carousel__slide">
+                    <div class="cs-ph cs-ph--hero" role="img" aria-label="Placeholder for Ripple full arc video">
+                      [VIDEO: muted looping hero of the full arc, with poster]
+                    </div>
+                  </li>
+                  <li class="cs-carousel__slide">
+                    <div class="cs-ph cs-ph--hero" role="img" aria-label="Placeholder for Ripple still of the open pond">
+                      [IMAGE: still of the open pond]
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="cs-carousel__controls">
+                <div class="cs-carousel__nav">
+                  <button type="button" class="cs-carousel__btn cs-carousel__btn--prev" aria-label="Previous slide">‹</button>
+                  <button type="button" class="cs-carousel__btn cs-carousel__btn--next" aria-label="Next slide">›</button>
+                </div>
+                <div class="cs-carousel__dots" aria-label="Slide controls"></div>
+              </div>
+              <p class="cs-carousel__status" aria-live="polite"></p>
+            </div>
+          </div>
+
+          <dl class="cs-meta">
+            <div>
+              <dt>Role</dt>
+              <dd>Solo: concept, design, and code</dd>
+            </div>
+            <div>
+              <dt>Team</dt>
+              <dd>Solo project</dd>
+            </div>
+            <div>
+              <dt>Timeline</dt>
+              <dd>[DATES], in progress</dd>
+            </div>
+            <div>
+              <dt>Tools</dt>
+              <dd>p5.js, JavaScript, Open-Meteo weather API</dd>
+            </div>
+          </dl>
+
+          <section class="cs-section cs-section--wide" aria-labelledby="ripple-overview">
+            <p class="cs-eyebrow">Overview</p>
+            <h2 id="ripple-overview">TL;DR</h2>
+            <div class="cs-overview">
+              <div class="cs-overview__item">
+                <span class="cs-overview__label">The problem</span>
+                <p>
+                  Recommenders that only return more of what you already chose cannot produce anything new.
+                </p>
+              </div>
+              <div class="cs-overview__item">
+                <span class="cs-overview__label">What I did</span>
+                <p>
+                  I designed and coded an interactive pond that narrows with preference, then pulls live Austin weather back in as outside randomness.
+                </p>
+              </div>
+              <div class="cs-overview__item">
+                <span class="cs-overview__label">The outcome</span>
+                <p>
+                  A discursive piece in progress. Live link and final media still pending.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section class="cs-section" aria-labelledby="ripple-context">
+            <p class="cs-eyebrow">Context</p>
+            <h2 id="ripple-context">Context and challenge</h2>
+            <p>
+              Ripple is a discursive design project based on James Bridle's <em>Ways of Being</em>, chapter 7, "Getting Random." The piece argues that closed preference loops erase chance encounters.
+            </p>
+            <p>
+              Viewers should feel the pond learn them, then feel what happens when the system can no longer invent variety from inside itself.
+            </p>
+            <blockquote class="cs-pullquote">
+              Real randomness has to come from outside the machine.
+            </blockquote>
+          </section>
+
+          <section class="cs-section cs-section--wide" aria-labelledby="ripple-goals">
+            <p class="cs-eyebrow">Goals</p>
+            <h2 id="ripple-goals">Goals</h2>
+            <ol class="cs-goals">
+              <li>Make preference collapse visible through interaction, not explanation alone.</li>
+              <li>Use live weather as behavior, not only as decoration.</li>
+              <li>Keep the opening instruction simple enough that clicking teaches the system.</li>
+            </ol>
+          </section>
+
+          <section class="cs-section cs-section--wide" aria-labelledby="ripple-research">
+            <p class="cs-eyebrow">Research</p>
+            <h2 id="ripple-research">Research and insights</h2>
+            <p>
+              The research base is the reading itself. Two ideas structure the piece.
+            </p>
+            <div class="cs-insight-grid">
+              <article class="cs-insight">
+                <h3>Recommenders reduce chance encounters</h3>
+                <p>
+                  Systems optimized for preference remove the accidents that once brought unfamiliar things into view.
+                </p>
+              </article>
+              <article class="cs-insight">
+                <h3>Selection without variation produces nothing new</h3>
+                <p>
+                  If every next option is drawn only from past likes, the set can shrink until novelty disappears.
+                </p>
+              </article>
+              <article class="cs-insight">
+                <h3>Outside input can reopen the set</h3>
+                <p>
+                  Weather is not trained on the viewer's clicks. Connecting it back in is a way to argue for external randomness.
+                </p>
+              </article>
+            </div>
+          </section>
+
+          <section class="cs-section cs-section--wide" aria-labelledby="ripple-ideation">
+            <p class="cs-eyebrow">Ideation</p>
+            <h2 id="ripple-ideation">Ideation and structure</h2>
+            <p>
+              Three earlier sketches came first: Sundial, Succulents, and Ripple. Ripple won because preference, narrowing, and outside weather could all live in one readable metaphor.
+            </p>
+
+            <div class="cs-carousel" data-carousel tabindex="0" aria-roledescription="carousel" aria-label="Earlier concept sketches">
+              <div class="cs-carousel__viewport">
+                <ul class="cs-carousel__track">
+                  <li class="cs-carousel__slide">
+                    <div class="cs-ph cs-ph--wide" role="img" aria-label="Placeholder for Sundial sketch">
+                      [IMAGE: Sundial sketch]
+                    </div>
+                  </li>
+                  <li class="cs-carousel__slide">
+                    <div class="cs-ph cs-ph--wide" role="img" aria-label="Placeholder for Succulents sketch">
+                      [IMAGE: Succulents sketch]
+                    </div>
+                  </li>
+                  <li class="cs-carousel__slide">
+                    <div class="cs-ph cs-ph--wide" role="img" aria-label="Placeholder for Ripple sketch">
+                      [IMAGE: Ripple sketch, the chosen direction]
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="cs-carousel__controls">
+                <div class="cs-carousel__nav">
+                  <button type="button" class="cs-carousel__btn cs-carousel__btn--prev" aria-label="Previous slide">‹</button>
+                  <button type="button" class="cs-carousel__btn cs-carousel__btn--next" aria-label="Next slide">›</button>
+                </div>
+                <div class="cs-carousel__dots" aria-label="Slide controls"></div>
+              </div>
+              <p class="cs-carousel__status" aria-live="polite"></p>
+            </div>
+            <p class="cs-caption">Sundial, Succulents, then Ripple. The pond made the argument legible in play.</p>
+
+            <h3 style="margin-top: 1.75rem">Four movements</h3>
+            <div class="cs-movements">
+              <article class="cs-movement">
+                <span class="cs-movement__step">01 · Rain</span>
+                <h3>Rain</h3>
+                <p>Ripples appear. The pond is open and full of chance.</p>
+              </article>
+              <article class="cs-movement">
+                <span class="cs-movement__step">02 · Learning</span>
+                <h3>Learning</h3>
+                <p>Clicks teach the system. Liked ripples shape what comes next.</p>
+              </article>
+              <article class="cs-movement">
+                <span class="cs-movement__step">03 · Still water</span>
+                <h3>Still water</h3>
+                <p>Novelty collapses. Nothing new appears inside the closed loop.</p>
+              </article>
+              <article class="cs-movement">
+                <span class="cs-movement__step">04 · Real rain</span>
+                <h3>Real rain</h3>
+                <p>Live Austin weather reconnects variety from outside the machine.</p>
+              </article>
+            </div>
+          </section>
+
+          <section class="cs-section cs-section--wide" aria-labelledby="ripple-decisions">
+            <p class="cs-eyebrow">Decisions</p>
+            <h2 id="ripple-decisions">Design decisions</h2>
+
+            <div class="cs-decision">
+              <h3>Opening instruction: click the ripples you like</h3>
+              <span class="cs-decision__label">The decision</span>
+              <p>
+                The piece starts with a plain instruction instead of a long explanation of recommenders.
+              </p>
+              <span class="cs-decision__label">Why</span>
+              <p>
+                Preference has to be felt through action. The critique lands harder after the viewer has trained the pond.
+              </p>
+            </div>
+
+            <div class="cs-decision">
+              <h3>Watercolor-inspired, noise-edged rings</h3>
+              <span class="cs-decision__label">The decision</span>
+              <p>
+                Ripples use soft, irregular edges rather than hard geometric circles.
+              </p>
+              <span class="cs-decision__label">Why</span>
+              <p>
+                The visual language needed to feel organic enough for a pond metaphor, while still reading as a system that can learn.
+              </p>
+            </div>
+
+            <div class="cs-decision">
+              <h3>Weather controls behavior, not just color</h3>
+              <span class="cs-decision__label">The decision</span>
+              <p>
+                Open-Meteo data changes how the pond behaves when variety returns, not only how it looks.
+              </p>
+              <span class="cs-decision__label">Why</span>
+              <p>
+                If weather were only a tint, the argument about outside randomness would stay decorative.
+              </p>
+            </div>
+          </section>
+
+          <section class="cs-section" aria-labelledby="ripple-iterations">
+            <p class="cs-eyebrow">Iterations</p>
+            <h2 id="ripple-iterations">Iterations</h2>
+            <ul>
+              <li>
+                <strong>Clicks not registering.</strong> Hit testing had to decide whether the ring or the word counted. I adjusted targets until preference felt reliable.
+              </li>
+              <li>
+                <strong>Counter climbing then dropping.</strong> I reframed the counter as engagement that never goes down, so the system did not punish earlier likes.
+              </li>
+              <li>
+                <strong>Gradient banding.</strong> Native radial gradients plus grain reduced banding without killing the watercolor feel.
+              </li>
+            </ul>
+          </section>
+
+          <section class="cs-section cs-section--wide" aria-labelledby="ripple-final">
+            <p class="cs-eyebrow">Final design</p>
+            <h2 id="ripple-final">Final design</h2>
+            <p>
+              The full arc belongs in video. Stills compare the narrowed pond with the open pond after weather returns.
+            </p>
+
+            <div class="cs-feature-block">
+              <h3>Full arc</h3>
+              <div class="cs-carousel" data-carousel tabindex="0" aria-roledescription="carousel" aria-label="Ripple full arc media">
+                <div class="cs-carousel__viewport">
+                  <ul class="cs-carousel__track">
+                    <li class="cs-carousel__slide">
+                      <div class="cs-ph cs-ph--wide" role="img" aria-label="Placeholder for Ripple full arc video">
+                        [VIDEO: full arc from rain to real rain, muted, looping, with poster]
+                      </div>
+                    </li>
+                    <li class="cs-carousel__slide">
+                      <div class="cs-ph cs-ph--wide" role="img" aria-label="Placeholder for alternate angle or UI state">
+                        [IMAGE: additional still from the arc]
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="cs-carousel__controls">
+                  <div class="cs-carousel__nav">
+                    <button type="button" class="cs-carousel__btn cs-carousel__btn--prev" aria-label="Previous slide">‹</button>
+                    <button type="button" class="cs-carousel__btn cs-carousel__btn--next" aria-label="Next slide">›</button>
+                  </div>
+                  <div class="cs-carousel__dots" aria-label="Slide controls"></div>
+                </div>
+                <p class="cs-carousel__status" aria-live="polite"></p>
+              </div>
+            </div>
+
+            <div class="cs-feature-block">
+              <h3>Narrowed pond versus open pond</h3>
+              <div class="cs-split">
+                <div>
+                  <div class="cs-ph cs-ph--pair" role="img" aria-label="Placeholder for narrowed pond still">
+                    [IMAGE: narrowed pond, still water]
+                  </div>
+                  <p class="cs-caption">After preference collapses</p>
+                </div>
+                <div>
+                  <div class="cs-ph cs-ph--pair" role="img" aria-label="Placeholder for open pond still after weather">
+                    [IMAGE: open pond after live weather returns]
+                  </div>
+                  <p class="cs-caption">After real rain reconnects</p>
+                </div>
+              </div>
+            </div>
+
+            <p style="margin-top: 1.5rem">
+              <a class="btn" href="[LIVE LINK]">Open live piece</a>
+            </p>
+          </section>
+
+          <section class="cs-section" aria-labelledby="ripple-results">
+            <p class="cs-eyebrow">Results</p>
+            <h2 id="ripple-results">Results and impact</h2>
+            <p>
+              Still in progress. No usage metrics yet. The piece is meant to be encountered as an argument you play, not as a product funnel.
+            </p>
+          </section>
+
+          <section class="cs-section" aria-labelledby="ripple-reflection">
+            <p class="cs-eyebrow">Reflection</p>
+            <h2 id="ripple-reflection">Reflection</h2>
+            <h3>What I learned</h3>
+            <ul>
+              <li>Discursive interaction works best when the critique arrives after the viewer has participated.</li>
+              <li>Outside data only supports the argument if it changes behavior.</li>
+              <li>Small interaction bugs (missed clicks, counters, banding) can break the metaphor faster than visual polish can save it.</li>
+            </ul>
+            <h3>What I would do next</h3>
+            <ul>
+              <li>Ship the live link and capture a clean hero video of the full arc.</li>
+              <li>Be explicit about the caveat: between weather fetches, the sequence is still deterministic.</li>
+              <li>[NEXT STEP 3]</li>
+            </ul>
+          </section>
+
+          <a class="cs-next" href="lablink.html">
+            <span>
+              <span class="cs-next__label">Next project</span>
+              <p class="cs-next__title">LabLink</p>
+            </span>
+            <span class="cs-next__arrow" aria-hidden="true">→</span>
+          </a>
+        </article>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="case-study.js"></script>
+  </body>
+</html>
