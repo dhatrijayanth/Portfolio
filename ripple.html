@@ -37,46 +37,35 @@
       <main class="main">
         <article class="page cs">
           <a class="cs-back" href="projects.html">Back to work</a>
-          <span class="cs-badge">In progress</span>
 
           <p class="page-label">Discursive design</p>
           <h1 class="page-title">Ripple</h1>
           <p class="cs-summary">
-            An interactive pond that learns what you like, then reconnects to live Austin weather for variety.
+            A pond that rains words, learns what you click, and narrows like a feed until live Austin weather breaks it open.
           </p>
 
-          <div class="cs-hero-media">
-            <div
-              class="cs-carousel"
-              data-carousel
-              tabindex="0"
-              aria-roledescription="carousel"
-              aria-label="Ripple hero media"
-            >
-              <div class="cs-carousel__viewport">
-                <ul class="cs-carousel__track">
-                  <li class="cs-carousel__slide">
-                    <div class="cs-ph cs-ph--hero" role="img" aria-label="Placeholder for Ripple full arc video">
-                      [VIDEO: muted looping hero of the full arc, with poster]
-                    </div>
-                  </li>
-                  <li class="cs-carousel__slide">
-                    <div class="cs-ph cs-ph--hero" role="img" aria-label="Placeholder for Ripple still of the open pond">
-                      [IMAGE: still of the open pond]
-                    </div>
-                  </li>
-                </ul>
-              </div>
-              <div class="cs-carousel__controls">
-                <div class="cs-carousel__nav">
-                  <button type="button" class="cs-carousel__btn cs-carousel__btn--prev" aria-label="Previous slide">‹</button>
-                  <button type="button" class="cs-carousel__btn cs-carousel__btn--next" aria-label="Next slide">›</button>
-                </div>
-                <div class="cs-carousel__dots" aria-label="Slide controls"></div>
-              </div>
-              <p class="cs-carousel__status" aria-live="polite"></p>
+          <section class="cs-section cs-section--wide cs-final-top" aria-labelledby="ripple-final">
+            <p class="cs-eyebrow">Final product</p>
+            <h2 id="ripple-final">Final product</h2>
+            <p>
+              The finished piece shows the closed loop first, then the interrupt. Words fall, clicks teach, the pond narrows, then weather reseeds the sequence from outside.
+            </p>
+            <div class="cs-embed cs-embed--proto">
+              <iframe
+                class="cs-embed__frame"
+                src="assets/Ripple-Final/index.html"
+                title="Ripple interactive p5.js sketch"
+                loading="lazy"
+                allow="autoplay"
+              ></iframe>
             </div>
-          </div>
+            <p class="cs-caption">
+              Click words to teach the pond. Press R once the feed narrows to hand control to live Austin weather.
+            </p>
+            <p style="margin-top: 1rem">
+              <a class="btn" href="assets/Ripple-Final/index.html" target="_blank" rel="noopener noreferrer">Open live sketch</a>
+            </p>
+          </section>
 
           <dl class="cs-meta">
             <div>
@@ -84,12 +73,12 @@
               <dd>Solo: concept, design, and code</dd>
             </div>
             <div>
-              <dt>Team</dt>
-              <dd>Solo project</dd>
+              <dt>Course</dt>
+              <dd>DES 334C, discursive design</dd>
             </div>
             <div>
               <dt>Timeline</dt>
-              <dd>[DATES], in progress</dd>
+              <dd>Fall studio project, final deliverable</dd>
             </div>
             <div>
               <dt>Tools</dt>
@@ -104,19 +93,19 @@
               <div class="cs-overview__item">
                 <span class="cs-overview__label">The problem</span>
                 <p>
-                  Recommenders that only return more of what you already chose cannot produce anything new.
+                  A system stuck inside its own rules can only shuffle what it is given. It cannot create anything new until something from outside interrupts it.
                 </p>
               </div>
               <div class="cs-overview__item">
                 <span class="cs-overview__label">What I did</span>
                 <p>
-                  I designed and coded an interactive pond that narrows with preference, then pulls live Austin weather back in as outside randomness.
+                  I built an interactive pond that rains six words, learns from clicks the way a feed does, then hands control to live Austin weather.
                 </p>
               </div>
               <div class="cs-overview__item">
                 <span class="cs-overview__label">The outcome</span>
                 <p>
-                  A discursive piece in progress. Live link and final media still pending.
+                  A discursive piece whose mechanism is meant to be felt in play. Critique feedback shaped four clarity changes so people could reach the weather shift.
                 </p>
               </div>
             </div>
@@ -126,13 +115,13 @@
             <p class="cs-eyebrow">Context</p>
             <h2 id="ripple-context">Context and challenge</h2>
             <p>
-              Ripple is a discursive design project based on James Bridle's <em>Ways of Being</em>, chapter 7, "Getting Random." The piece argues that closed preference loops erase chance encounters.
+              Ripple sits in James Bridle's argument from <em>Ways of Being</em>: a computer can only shuffle what you already gave it. It cannot bring in anything truly new on its own.
             </p>
             <p>
-              Viewers should feel the pond learn them, then feel what happens when the system can no longer invent variety from inside itself.
+              The pond rains words: drift, fade, rain, flow, dissolve, echo. Click a word and the system raises that word's weight and nudges new ripples toward where you clicked. Do this enough times and the pond stops scattering words. It clusters them, repeats the same word, and leaves less to discover. That is a recommendation algorithm reduced to six words and one personalization value.
             </p>
             <blockquote class="cs-pullquote">
-              Real randomness has to come from outside the machine.
+              You click on words the way you'd click on a post, and watch the pond slowly learn what you like. The point is to feel that happen, not read about it afterward.
             </blockquote>
           </section>
 
@@ -140,9 +129,9 @@
             <p class="cs-eyebrow">Goals</p>
             <h2 id="ripple-goals">Goals</h2>
             <ol class="cs-goals">
-              <li>Make preference collapse visible through interaction, not explanation alone.</li>
-              <li>Use live weather as behavior, not only as decoration.</li>
-              <li>Keep the opening instruction simple enough that clicking teaches the system.</li>
+              <li>Make a learning feed visible as a pattern of words appearing, clustering, and repeating.</li>
+              <li>Keep enough ambiguity for discourse without losing the moment people recognize the mechanism acting on them.</li>
+              <li>Let live weather shape behavior, not sit on screen as decorative data.</li>
             </ol>
           </section>
 
@@ -150,25 +139,25 @@
             <p class="cs-eyebrow">Research</p>
             <h2 id="ripple-research">Research and insights</h2>
             <p>
-              The research base is the reading itself. Two ideas structure the piece.
+              The reading set the argument. Class critique and sticky-note feedback tested whether people could feel it.
             </p>
             <div class="cs-insight-grid">
               <article class="cs-insight">
-                <h3>Recommenders reduce chance encounters</h3>
+                <h3>Closed systems only reshuffle</h3>
                 <p>
-                  Systems optimized for preference remove the accidents that once brought unfamiliar things into view.
+                  Bridle's point landed in the first version: the sketch picked random words on a timer. Nothing was connected to the sky, so nothing new could enter.
                 </p>
               </article>
               <article class="cs-insight">
-                <h3>Selection without variation produces nothing new</h3>
+                <h3>Ambiguity helped discourse, then stalled recognition</h3>
                 <p>
-                  If every next option is drawn only from past likes, the set can shrink until novelty disappears.
+                  Feedback called the vagueness good for projection. The same vagueness blocked people from noticing that their own clicks were teaching the pond.
                 </p>
               </article>
               <article class="cs-insight">
-                <h3>Outside input can reopen the set</h3>
+                <h3>Most people never reached the weather half</h3>
                 <p>
-                  Weather is not trained on the viewer's clicks. Connecting it back in is a way to argue for external randomness.
+                  The "press R" prompt was small, gray, and tucked in a corner. Almost nobody found it, so almost nobody reached the part where control passes outside the system.
                 </p>
               </article>
             </div>
@@ -178,26 +167,79 @@
             <p class="cs-eyebrow">Ideation</p>
             <h2 id="ripple-ideation">Ideation and structure</h2>
             <p>
-              Three earlier sketches came first: Sundial, Succulents, and Ripple. Ripple won because preference, narrowing, and outside weather could all live in one readable metaphor.
+              I chose the ripple because its weakest moment doubled as its clearest argument. An early version dropped a new word every forty frames at a random position from a fixed list, on a strict interval, like a metronome. That mechanical sameness looked like a flaw next to the plant garden and the sundial. A closed system imitating an open one is supposed to feel mechanical underneath.
+            </p>
+            <p>
+              I picked the sketch that was honest about its own limits over the two that looked more finished, because the goal was a reaction, not polish alone.
             </p>
 
-            <div class="cs-carousel" data-carousel tabindex="0" aria-roledescription="carousel" aria-label="Earlier concept sketches">
+            <h3 style="margin-top: 1.75rem">How the pond learns</h3>
+            <div class="cs-movements">
+              <article class="cs-movement">
+                <span class="cs-movement__step">01</span>
+                <h3>Words rain</h3>
+                <p>Six words fall across the screen: drift, fade, rain, flow, dissolve, echo.</p>
+              </article>
+              <article class="cs-movement">
+                <span class="cs-movement__step">02</span>
+                <h3>Clicks teach</h3>
+                <p>Each click raises a word's weight and pulls new ripples toward that point.</p>
+              </article>
+              <article class="cs-movement">
+                <span class="cs-movement__step">03</span>
+                <h3>The feed narrows</h3>
+                <p>Personalization climbs. Words cluster. The same word returns more often.</p>
+              </article>
+              <article class="cs-movement">
+                <span class="cs-movement__step">04</span>
+                <h3>Weather takes over</h3>
+                <p>Live Austin wind, pressure, and precipitation reopen the system from outside the code.</p>
+              </article>
+            </div>
+          </section>
+
+          <section class="cs-section cs-section--wide" aria-labelledby="ripple-process">
+            <p class="cs-eyebrow">Process</p>
+            <h2 id="ripple-process">Process</h2>
+            <p>
+              Frames from the deliverables PDF that track early sketches, the black-field draft, and pattern as process.
+            </p>
+
+            <div class="cs-carousel" data-carousel tabindex="0" aria-roledescription="carousel" aria-label="Ripple process PDF pages">
               <div class="cs-carousel__viewport">
                 <ul class="cs-carousel__track">
                   <li class="cs-carousel__slide">
-                    <div class="cs-ph cs-ph--wide" role="img" aria-label="Placeholder for Sundial sketch">
-                      [IMAGE: Sundial sketch]
-                    </div>
+                    <figure class="cs-shot">
+                        <img
+                          src="assets/ripple/page-07-sketches.png"
+                          alt="Ripple process PDF page: early sketches and why Ripple won"
+                          width="1440"
+                          height="900"
+                          loading="lazy"
+                        />
+                      </figure>
                   </li>
                   <li class="cs-carousel__slide">
-                    <div class="cs-ph cs-ph--wide" role="img" aria-label="Placeholder for Succulents sketch">
-                      [IMAGE: Succulents sketch]
-                    </div>
+                    <figure class="cs-shot">
+                        <img
+                          src="assets/ripple/page-08-black-field.png"
+                          alt="Ripple process PDF page: pond scene stripped to a black field"
+                          width="1440"
+                          height="900"
+                          loading="lazy"
+                        />
+                      </figure>
                   </li>
                   <li class="cs-carousel__slide">
-                    <div class="cs-ph cs-ph--wide" role="img" aria-label="Placeholder for Ripple sketch">
-                      [IMAGE: Ripple sketch, the chosen direction]
-                    </div>
+                    <figure class="cs-shot">
+                        <img
+                          src="assets/ripple/page-09-pattern.png"
+                          alt="Ripple process PDF page: pattern as process, not decoration"
+                          width="1440"
+                          height="900"
+                          loading="lazy"
+                        />
+                      </figure>
                   </li>
                 </ul>
               </div>
@@ -210,30 +252,24 @@
               </div>
               <p class="cs-carousel__status" aria-live="polite"></p>
             </div>
-            <p class="cs-caption">Sundial, Succulents, then Ripple. The pond made the argument legible in play.</p>
+            <p class="cs-caption">Click a page to zoom and pan.</p>
 
-            <h3 style="margin-top: 1.75rem">Four movements</h3>
-            <div class="cs-movements">
-              <article class="cs-movement">
-                <span class="cs-movement__step">01 · Rain</span>
-                <h3>Rain</h3>
-                <p>Ripples appear. The pond is open and full of chance.</p>
-              </article>
-              <article class="cs-movement">
-                <span class="cs-movement__step">02 · Learning</span>
-                <h3>Learning</h3>
-                <p>Clicks teach the system. Liked ripples shape what comes next.</p>
-              </article>
-              <article class="cs-movement">
-                <span class="cs-movement__step">03 · Still water</span>
-                <h3>Still water</h3>
-                <p>Novelty collapses. Nothing new appears inside the closed loop.</p>
-              </article>
-              <article class="cs-movement">
-                <span class="cs-movement__step">04 · Real rain</span>
-                <h3>Real rain</h3>
-                <p>Live Austin weather reconnects variety from outside the machine.</p>
-              </article>
+            <div class="cs-feature-block" style="margin-top: 1.5rem">
+              <h3>Full process PDF</h3>
+              <div class="cs-pdf-embed">
+                <iframe
+                  class="cs-pdf-embed__frame"
+                  src="assets/ripple-case-study.pdf#view=FitH"
+                  title="Ripple process and deliverables PDF"
+                  loading="lazy"
+                ></iframe>
+              </div>
+              <p class="cs-caption">
+                Full deliverables PDF. Open in a new tab if the embedded viewer is unavailable.
+              </p>
+              <p style="margin-top: 1rem">
+                <a class="btn" href="assets/ripple-case-study.pdf" target="_blank" rel="noopener noreferrer">Open process PDF</a>
+              </p>
             </div>
           </section>
 
@@ -242,122 +278,100 @@
             <h2 id="ripple-decisions">Design decisions</h2>
 
             <div class="cs-decision">
-              <h3>Opening instruction: click the ripples you like</h3>
+              <h3>A plain black field instead of a scenic pond</h3>
               <span class="cs-decision__label">The decision</span>
               <p>
-                The piece starts with a plain instruction instead of a long explanation of recommenders.
+                My first instinct was a pond with horizon and depth, then a flat teal that was meant to read as sky in water. Both read as decoration. I moved to near black, closer to a pond at night where you cannot see the bottom.
               </p>
               <span class="cs-decision__label">Why</span>
               <p>
-                Preference has to be felt through action. The critique lands harder after the viewer has trained the pond.
+                You cannot see into a personalization algorithm's internals either. You only see what it surfaces. A pretty photo would have hidden that.
               </p>
             </div>
 
             <div class="cs-decision">
-              <h3>Watercolor-inspired, noise-edged rings</h3>
+              <h3>Make the mechanism stated, not only inferred</h3>
               <span class="cs-decision__label">The decision</span>
               <p>
-                Ripples use soft, irregular edges rather than hard geometric circles.
+                The opening line now pairs with a quieter second line: it learns from what you click, the way a feed does. Once clicks pull the cluster far enough, new words near that point are tagged "recommended for you."
               </p>
               <span class="cs-decision__label">Why</span>
               <p>
-                The visual language needed to feel organic enough for a pond metaphor, while still reading as a system that can learn.
+                Critique showed people liked ambiguity for discourse, but could not tell the ripples responded to their clicks rather than a generic timer. Recognition had to arrive before interpretation.
               </p>
             </div>
 
             <div class="cs-decision">
-              <h3>Weather controls behavior, not just color</h3>
+              <h3>Weather as structure, not a label</h3>
               <span class="cs-decision__label">The decision</span>
               <p>
-                Open-Meteo data changes how the pond behaves when variety returns, not only how it looks.
+                After a class session with Tega Brain, I tied behavior to live weather over Austin. Wind speed sets the interval between ripples. Precipitation compresses that interval when it is raining. Wind and pressure together seed the random number generator through randomSeed.
               </p>
               <span class="cs-decision__label">Why</span>
               <p>
-                If weather were only a tint, the argument about outside randomness would stay decorative.
+                Printing wind speed as on-screen decoration would have stayed cosmetic. Seeding the sequence from the sky means rain mode is no longer determined only by the sketch's own code.
               </p>
             </div>
           </section>
 
-          <section class="cs-section" aria-labelledby="ripple-iterations">
+          <section class="cs-section cs-section--wide" aria-labelledby="ripple-iterations">
             <p class="cs-eyebrow">Iterations</p>
-            <h2 id="ripple-iterations">Iterations</h2>
+            <h2 id="ripple-iterations">Critique changes</h2>
+            <p>
+              Four changes came directly out of critique. Each answered a specific note about clarity.
+            </p>
             <ul>
               <li>
-                <strong>Clicks not registering.</strong> Hit testing had to decide whether the ring or the word counted. I adjusted targets until preference felt reliable.
+                <strong>Recognition.</strong> Added the quieter line under the opener so the learning mechanism is stated.
               </li>
               <li>
-                <strong>Counter climbing then dropping.</strong> I reframed the counter as engagement that never goes down, so the system did not punish earlier likes.
+                <strong>Visibility.</strong> Moved "press R" from a small gray corner prompt to a centered, larger, pulsing cue once personalization crosses ninety percent.
               </li>
               <li>
-                <strong>Gradient banding.</strong> Native radial gradients plus grain reduced banding without killing the watercolor feel.
+                <strong>HUD contrast.</strong> Put the readout on a dark, semi-transparent bar so it reads as information, not faint decoration.
+              </li>
+              <li>
+                <strong>Feed language.</strong> Tagged clustered words "recommended for you" so the sketch labels what a real feed is doing.
               </li>
             </ul>
-          </section>
-
-          <section class="cs-section cs-section--wide" aria-labelledby="ripple-final">
-            <p class="cs-eyebrow">Final design</p>
-            <h2 id="ripple-final">Final design</h2>
             <p>
-              The full arc belongs in video. Stills compare the narrowed pond with the open pond after weather returns.
+              Each change was about calibration: how much clarity a discursive piece needs before useful ambiguity becomes confusion.
             </p>
 
-            <div class="cs-feature-block">
-              <h3>Full arc</h3>
-              <div class="cs-carousel" data-carousel tabindex="0" aria-roledescription="carousel" aria-label="Ripple full arc media">
-                <div class="cs-carousel__viewport">
-                  <ul class="cs-carousel__track">
-                    <li class="cs-carousel__slide">
-                      <div class="cs-ph cs-ph--wide" role="img" aria-label="Placeholder for Ripple full arc video">
-                        [VIDEO: full arc from rain to real rain, muted, looping, with poster]
-                      </div>
-                    </li>
-                    <li class="cs-carousel__slide">
-                      <div class="cs-ph cs-ph--wide" role="img" aria-label="Placeholder for alternate angle or UI state">
-                        [IMAGE: additional still from the arc]
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-                <div class="cs-carousel__controls">
-                  <div class="cs-carousel__nav">
-                    <button type="button" class="cs-carousel__btn cs-carousel__btn--prev" aria-label="Previous slide">‹</button>
-                    <button type="button" class="cs-carousel__btn cs-carousel__btn--next" aria-label="Next slide">›</button>
-                  </div>
-                  <div class="cs-carousel__dots" aria-label="Slide controls"></div>
-                </div>
-                <p class="cs-carousel__status" aria-live="polite"></p>
-              </div>
+            <div class="cs-split" style="margin-top: 1.25rem">
+              <figure class="cs-shot">
+                  <img
+                    src="assets/ripple/page-11-changes-1.png"
+                    alt="Ripple process PDF page: first and second critique changes"
+                    width="1440"
+                    height="900"
+                    loading="lazy"
+                  />
+                </figure>
+              <figure class="cs-shot">
+                  <img
+                    src="assets/ripple/page-12-changes-2.png"
+                    alt="Ripple process PDF page: third and fourth critique changes"
+                    width="1440"
+                    height="900"
+                    loading="lazy"
+                  />
+                </figure>
             </div>
-
-            <div class="cs-feature-block">
-              <h3>Narrowed pond versus open pond</h3>
-              <div class="cs-split">
-                <div>
-                  <div class="cs-ph cs-ph--pair" role="img" aria-label="Placeholder for narrowed pond still">
-                    [IMAGE: narrowed pond, still water]
-                  </div>
-                  <p class="cs-caption">After preference collapses</p>
-                </div>
-                <div>
-                  <div class="cs-ph cs-ph--pair" role="img" aria-label="Placeholder for open pond still after weather">
-                    [IMAGE: open pond after live weather returns]
-                  </div>
-                  <p class="cs-caption">After real rain reconnects</p>
-                </div>
-              </div>
-            </div>
-
-            <p style="margin-top: 1.5rem">
-              <a class="btn" href="[LIVE LINK]">Open live piece</a>
-            </p>
           </section>
 
-          <section class="cs-section" aria-labelledby="ripple-results">
+          <section class="cs-section cs-section--wide" aria-labelledby="ripple-results">
             <p class="cs-eyebrow">Results</p>
             <h2 id="ripple-results">Results and impact</h2>
             <p>
-              Still in progress. No usage metrics yet. The piece is meant to be encountered as an argument you play, not as a product funnel.
+              I only got three sticky notes, so either few people reached the computer or the concept needed clearer framing. Much of the written feedback landed on aesthetic, not substance.
             </p>
+            <p>
+              A longer conversation mapped the experience into six stages: encounter, inspect, recognize, decipher, interpret, reflect. Ambiguity helped encounter. It broke recognize. People could not tell the ripples answered their clicks, so deciphering stalled before interpretation. The hidden weather prompt meant most viewers never reached the half of the piece that completes the argument.
+            </p>
+            <blockquote class="cs-quote">
+              One note called the vagueness good for discourse without using that term. That is a discursive strategy working as intended: ambiguity gave people room to read their own meaning into it.
+            </blockquote>
           </section>
 
           <section class="cs-section" aria-labelledby="ripple-reflection">
@@ -365,22 +379,21 @@
             <h2 id="ripple-reflection">Reflection</h2>
             <h3>What I learned</h3>
             <ul>
-              <li>Discursive interaction works best when the critique arrives after the viewer has participated.</li>
-              <li>Outside data only supports the argument if it changes behavior.</li>
-              <li>Small interaction bugs (missed clicks, counters, banding) can break the metaphor faster than visual polish can save it.</li>
+              <li>Showing the mechanism can say more than explaining it, but only if people can recognize that the system is responding to them.</li>
+              <li>Outside data only supports the argument when it changes behavior, not when it appears as a cosmetic label.</li>
+              <li>Discursive ambiguity needs a floor of clarity. Without that floor, people praise the look and miss the trick.</li>
             </ul>
             <h3>What I would do next</h3>
             <ul>
-              <li>Ship the live link and capture a clean hero video of the full arc.</li>
-              <li>Be explicit about the caveat: between weather fetches, the sequence is still deterministic.</li>
-              <li>[NEXT STEP 3]</li>
+              <li>Add a muted looping hero video of the full arc and stills of the narrowed versus open pond.</li>
+              <li>Keep testing whether the weather interrupt is discoverable without over-explaining the piece.</li>
             </ul>
           </section>
 
-          <a class="cs-next" href="lablink.html">
+          <a class="cs-next" href="tacc.html">
             <span>
               <span class="cs-next__label">Next project</span>
-              <p class="cs-next__title">LabLink</p>
+              <p class="cs-next__title">Musical Molecules</p>
             </span>
             <span class="cs-next__arrow" aria-hidden="true">→</span>
           </a>

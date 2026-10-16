@@ -370,13 +370,13 @@ button {
   font-size: 1rem;
   padding: 0.85rem 1.9rem;
   border-radius: 999px 1.75rem 999px 1.5rem;
-  background: var(--ink);
+  background: var(--terracotta);
   color: var(--white);
   transition: background 0.25s var(--ease), transform 0.25s var(--ease);
 }
 
 .btn:hover {
-  background: var(--terracotta);
+  background: var(--sap);
   transform: translateY(-2px);
 }
 
@@ -604,78 +604,126 @@ button {
 
 /* --- Resume --- */
 
-.resume-block {
+.page--resume {
+  max-width: none;
+  width: 100%;
+  padding-right: clamp(2rem, 6vw, 4.5rem);
+}
+
+.resume-header {
   margin-bottom: 2.25rem;
+}
+
+.resume-name {
+  font-family: var(--font-display);
+  font-size: clamp(1.85rem, 4vw, 2.5rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  margin: 0 0 0.55rem;
+  text-align: center;
+}
+
+.resume-contact {
+  margin: 0 0 1.25rem;
+  text-align: center;
+  font-size: 0.92rem;
+  color: var(--ink-soft);
+  line-height: 1.5;
+}
+
+.resume-contact a {
+  color: var(--terracotta);
+  transition: color 0.2s var(--ease);
+}
+
+.resume-contact a:hover {
+  color: var(--sap);
+}
+
+.resume-download {
+  margin: 0;
+  text-align: center;
+}
+
+.resume-block {
+  margin-bottom: 1.75rem;
 }
 
 .resume-block h2 {
   font-family: var(--font-mono);
-  font-size: 1rem;
-  font-weight: 400;
+  font-size: 0.92rem;
+  font-weight: 500;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--sap);
-  margin: 0 0 1rem;
+  margin: 0 0 0.85rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 1.5px solid var(--line);
 }
 
 .resume-entry {
-  margin-bottom: 1.35rem;
-  padding-left: 1rem;
-  border-left: 2px solid var(--line);
-  border-radius: 0 0 0 0.75rem;
+  margin-bottom: 1.15rem;
 }
 
-.resume-entry:hover {
-  border-left-color: var(--terracotta);
+.resume-entry:last-child {
+  margin-bottom: 0;
 }
 
-.resume-role {
-  font-weight: 500;
-  margin: 0 0 0.15rem;
+.resume-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  margin: 0 0 0.1rem;
 }
 
-.resume-meta {
-  font-family: var(--font-mono);
-  font-size: 1rem;
-  color: var(--ink-soft);
-  margin: 0 0 0.4rem;
-}
-
-.resume-entry p {
+.resume-left,
+.resume-right {
   margin: 0;
-  font-size: 1rem;
-  color: var(--ink-soft);
+  font-size: 0.98rem;
+  color: var(--ink);
+  line-height: 1.4;
 }
 
-.resume-download {
-  margin: -1.25rem 0 2.25rem;
+.resume-left {
+  flex: 1;
+  min-width: 0;
+}
+
+.resume-right {
+  flex-shrink: 0;
+  text-align: right;
+  color: var(--ink-soft);
+  white-space: nowrap;
+}
+
+.resume-strong {
+  font-weight: 600;
 }
 
 .resume-bullets {
   margin: 0.35rem 0 0;
   padding-left: 1.15rem;
-  color: var(--ink-soft);
-  font-size: 0.98rem;
+  color: var(--ink);
+  font-size: 0.95rem;
+  line-height: 1.45;
 }
 
 .resume-bullets li {
-  margin-bottom: 0.35rem;
+  margin-bottom: 0.3rem;
 }
 
 .resume-bullets li:last-child {
   margin-bottom: 0;
 }
 
-.resume-skill-label {
-  font-family: var(--font-mono);
-  font-size: 0.85rem;
-  letter-spacing: 0.04em;
-  color: var(--ink-soft);
-  margin: 1rem 0 0.55rem;
+.resume-bullets--skills {
+  margin-top: 0;
 }
 
-.resume-skill-label:first-of-type {
-  margin-top: 0;
+.resume-bullets strong {
+  font-weight: 600;
 }
 
 .skill-list {
@@ -685,6 +733,25 @@ button {
   list-style: none;
   margin: 0;
   padding: 0;
+}
+
+@media (max-width: 600px) {
+  .resume-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.1rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .resume-right {
+    text-align: left;
+    white-space: normal;
+    font-size: 0.9rem;
+  }
+
+  .resume-contact {
+    font-size: 0.85rem;
+  }
 }
 
 /* --- Contact --- */

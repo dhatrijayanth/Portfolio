@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TACC Molecular Dynamics Exhibit - Dhatri Jayanth</title>
+    <title>Musical Molecules - Dhatri Jayanth</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -35,33 +35,266 @@
       </aside>
 
       <main class="main">
-        <article class="page cs cs-coming">
+        <article class="page cs">
           <a class="cs-back" href="projects.html">Back to work</a>
           <span class="cs-badge">In progress</span>
 
-          <p class="page-label">Exhibit design</p>
-          <h1 class="page-title">TACC Molecular Dynamics Exhibit</h1>
+          <p class="page-label">TACC exhibit</p>
+          <h1 class="page-title">Musical Molecules</h1>
           <p class="cs-summary">
-            Designing a public exhibit that makes molecular dynamics and IR spectra something you can see and hear.
+            An interactive exhibit that turns infrared fingerprints into something visitors can see, tap, and hear.
           </p>
 
-          <div class="cs-coming-hero">
-            <div class="cs-ph cs-ph--hero" role="img" aria-label="Placeholder for TACC exhibit media">
-              [IMAGE OR VIDEO: exhibit concept stills and interaction moments]
+          <section class="cs-section cs-section--wide cs-final-top" aria-labelledby="tacc-final">
+            <p class="cs-eyebrow">Final product</p>
+            <h2 id="tacc-final">Final product</h2>
+            <p>
+              Prototype screens from the Chemistry Themed Animation build: molecule picker, timed intro, and bond-frequency explorer.
+            </p>
+            <div
+              class="cs-carousel"
+              data-carousel
+              tabindex="0"
+              aria-roledescription="carousel"
+              aria-label="Musical Molecules interface screens"
+            >
+              <div class="cs-carousel__viewport">
+                <ul class="cs-carousel__track">
+                  <li class="cs-carousel__slide">
+                    <figure class="cs-shot">
+                        <img
+                          src="assets/tacc/molecules-home.png"
+                          alt="Musical Molecules home screen with five molecule cards: Vanillin, Aspirin, Caffeine, Acetone, and Ethanol"
+                          width="1600"
+                          height="900"
+                          decoding="async"
+                        />
+                      </figure>
+                  </li>
+                  <li class="cs-carousel__slide">
+                    <figure class="cs-shot">
+                        <img
+                          src="assets/tacc/vanillin-intro.png"
+                          alt="Eighteen-second Vanillin introduction overlay with IR spectrum preview and skip control"
+                          width="1600"
+                          height="900"
+                          loading="lazy"
+                        />
+                      </figure>
+                  </li>
+                  <li class="cs-carousel__slide">
+                    <figure class="cs-shot">
+                        <img
+                          src="assets/tacc/vanillin-fingerprint.png"
+                          alt="Hear My Frequency view showing Vanillin IR spectrum dips beside a highlighted C-O stretch on the molecule"
+                          width="1600"
+                          height="900"
+                          loading="lazy"
+                        />
+                      </figure>
+                  </li>
+                </ul>
+              </div>
+              <div class="cs-carousel__controls">
+                <div class="cs-carousel__nav">
+                  <button type="button" class="cs-carousel__btn cs-carousel__btn--prev" aria-label="Previous slide">‹</button>
+                  <button type="button" class="cs-carousel__btn cs-carousel__btn--next" aria-label="Next slide">›</button>
+                </div>
+                <div class="cs-carousel__dots" aria-label="Slide controls"></div>
+              </div>
+              <p class="cs-carousel__status" aria-live="polite"></p>
             </div>
-          </div>
+            <p class="cs-caption">
+              Choose a molecule, watch a short intro, then tap spectrum dips to see and hear each bond.
+            </p>
+          </section>
 
-          <p>
-            Research at TACC. Full case study coming soon.
-          </p>
-          <p>
-            This page is a placeholder so the project can live on the work list while media, process, and outcomes are still in progress.
-          </p>
+          <dl class="cs-meta">
+            <div>
+              <dt>Role</dt>
+              <dd>Lead Product UI Designer: interaction, visual system, front-end prototype, and backend planning</dd>
+            </div>
+            <div>
+              <dt>Org</dt>
+              <dd>Texas Advanced Computing Center (TACC)</dd>
+            </div>
+            <div>
+              <dt>Timeline</dt>
+              <dd>May 2026 to present</dd>
+            </div>
+            <div>
+              <dt>Tools</dt>
+              <dd>Figma Make, React, Vite, Tailwind, Claude Code; backend stack still in planning</dd>
+            </div>
+          </dl>
 
-          <a class="cs-next" href="projects.html">
+          <section class="cs-section cs-section--wide" aria-labelledby="tacc-overview">
+            <p class="cs-eyebrow">Overview</p>
+            <h2 id="tacc-overview">TL;DR</h2>
+            <div class="cs-overview">
+              <div class="cs-overview__item">
+                <span class="cs-overview__label">The problem</span>
+                <p>
+                  Infrared spectra and molecular vibration are abstract on paper. Public visitors rarely get a way to connect a dip on a graph to a bond that moves.
+                </p>
+              </div>
+              <div class="cs-overview__item">
+                <span class="cs-overview__label">What I did</span>
+                <p>
+                  I designed and prototyped Musical Molecules on the front end: five familiar compounds, short IR intros, and a Hear My Frequency mode that maps spectrum dips to bond motion and tone. Backend architecture is in planning.
+                </p>
+              </div>
+              <div class="cs-overview__item">
+                <span class="cs-overview__label">The outcome</span>
+                <p>
+                  A working React exhibit prototype for Vanillin and four companion molecules, built for TACC public-facing molecular dynamics storytelling. Backend work has not started in earnest yet. Still iterating with educators and science partners.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section class="cs-section" aria-labelledby="tacc-context">
+            <p class="cs-eyebrow">Context</p>
+            <h2 id="tacc-context">Context and challenge</h2>
+            <p>
+              At TACC I am shaping interactive UI for a molecular dynamics exhibit. The science is real IR fingerprints: each molecule absorbs light at specific frequencies, and those dips identify bonds.
+            </p>
+            <p>
+              The design problem is translation. Graph axes and wavenumbers do not teach a museum visitor. Everyday molecules do: vanilla, aspirin, coffee, nail polish remover, corn ethanol. The exhibit has to make the fingerprint feel tactile without flattening the chemistry.
+            </p>
+            <blockquote class="cs-pullquote">
+              Choose a molecule you already know. See its fingerprint. Hear the pattern its bonds make.
+            </blockquote>
+          </section>
+
+          <section class="cs-section cs-section--wide" aria-labelledby="tacc-goals">
+            <p class="cs-eyebrow">Goals</p>
+            <h2 id="tacc-goals">Goals</h2>
+            <ol class="cs-goals">
+              <li>Let visitors pick a familiar molecule before they face a spectrum.</li>
+              <li>Connect each colored dip to a named bond vibration on the structure.</li>
+              <li>Use sound so frequency is felt, not only read as a number.</li>
+            </ol>
+          </section>
+
+          <section class="cs-section cs-section--wide" aria-labelledby="tacc-ideation">
+            <p class="cs-eyebrow">Ideation</p>
+            <h2 id="tacc-ideation">Experience structure</h2>
+            <p>
+              The prototype follows a three-beat loop for each of five molecules: Vanillin, Aspirin, Caffeine, Acetone, and Ethanol.
+            </p>
+            <div class="cs-movements">
+              <article class="cs-movement">
+                <span class="cs-movement__step">01</span>
+                <h3>Meet the five</h3>
+                <p>Home screen cards with everyday imagery. Each molecule has a Look inside path.</p>
+              </article>
+              <article class="cs-movement">
+                <span class="cs-movement__step">02</span>
+                <h3>Eighteen-second intro</h3>
+                <p>A short narrated beat: light meets the sample, the fingerprint layers, why it matters. Skip stays available.</p>
+              </article>
+              <article class="cs-movement">
+                <span class="cs-movement__step">03</span>
+                <h3>Hear My Frequency</h3>
+                <p>Tap a colored spectrum dip. The matching bond lights on the molecule and a tone plays for that vibration.</p>
+              </article>
+            </div>
+          </section>
+
+          <section class="cs-section cs-section--wide" aria-labelledby="tacc-process">
+            <p class="cs-eyebrow">Process</p>
+            <h2 id="tacc-process">Process</h2>
+            <p>
+              The Chemistry Themed Animation app is a React and Vite front end with Tailwind. Interaction state covers molecule selection, intro playback, spectrum mode selection, and Web Audio tones. Figma Make scaffolded the visual system; I extended the component set for the exhibit flow.
+            </p>
+            <p>
+              Vanillin is the deepest path so far: full intro scenes, five interactive stretch modes, and a bond-highlight molecule view. The other four molecules share the same card and fingerprint model so the set can grow without a new interaction grammar.
+            </p>
+            <p>
+              I am also owning the backend path for the exhibit, but that work is still in planning. The current prototype runs client-side. Next is defining how molecule data, media, and any live exhibit services should sit behind the UI before implementation begins.
+            </p>
+            <div class="cs-split" style="margin-top: 1.5rem">
+              <figure class="cs-shot">
+                  <img
+                    src="assets/tacc/vanillin-intro.png"
+                    alt="Vanillin intro overlay showing part 2 of 3: a layered fingerprint"
+                    width="800"
+                    height="500"
+                    loading="lazy"
+                  />
+                </figure>
+              <figure class="cs-shot">
+                  <img
+                    src="assets/tacc/vanillin-fingerprint.png"
+                    alt="Vanillin Hear My Frequency with C-O stretch selected"
+                    width="800"
+                    height="500"
+                    loading="lazy"
+                  />
+                </figure>
+            </div>
+            <p class="cs-caption">
+              Timed intro keeps science brief, with an escape hatch to explore. Spectrum and structure stay linked by color while the bond is active.
+            </p>
+          </section>
+
+          <section class="cs-section cs-section--wide" aria-labelledby="tacc-decisions">
+            <p class="cs-eyebrow">Decisions</p>
+            <h2 id="tacc-decisions">Design decisions</h2>
+
+            <div class="cs-decision">
+              <h3>Everyday molecules before abstract spectra</h3>
+              <span class="cs-decision__label">The decision</span>
+              <p>
+                The first screen is a picker of five real-world compounds with photographic anchors, not a blank IR chart.
+              </p>
+              <span class="cs-decision__label">Why</span>
+              <p>
+                Visitors need a mental hook. Vanilla and coffee invite curiosity. Wavenumber axes do not.
+              </p>
+            </div>
+
+            <div class="cs-decision">
+              <h3>Color-linked dips, legend, and molecule</h3>
+              <span class="cs-decision__label">The decision</span>
+              <p>
+                Each stretch mode (O-H, C-H, C=O, aromatic C=C, C-O) keeps one color across the spectrum point, the pill legend, and the highlighted bond.
+              </p>
+              <span class="cs-decision__label">Why</span>
+              <p>
+                The mapping has to survive a glance. If the purple dip, purple label, and purple bond disagree, the lesson fails.
+              </p>
+            </div>
+
+            <div class="cs-decision">
+              <h3>Sound as a second channel for frequency</h3>
+              <span class="cs-decision__label">The decision</span>
+              <p>
+                Selecting a dip plays a sine tone scaled from the vibration class. Sequences can also play the molecule's fingerprint as a short motif.
+              </p>
+              <span class="cs-decision__label">Why</span>
+              <p>
+                IR is about frequency. Hearing a difference between stretches makes the idea stick when the graph alone would not.
+              </p>
+            </div>
+          </section>
+
+          <section class="cs-section" aria-labelledby="tacc-next">
+            <p class="cs-eyebrow">Next</p>
+            <h2 id="tacc-next">What is still open</h2>
+            <ul>
+              <li>Finish parity across Aspirin, Caffeine, Acetone, and Ethanol explore modes.</li>
+              <li>Plan and start the backend: data model, media delivery, and exhibit services the UI will call.</li>
+              <li>Fold educator workshop feedback into pacing, skip behavior, and label clarity.</li>
+              <li>Harden the prototype for exhibit hardware: kiosk scale, muted-first audio cues, and durable controls.</li>
+            </ul>
+          </section>
+
+          <a class="cs-next" href="storywall.html">
             <span>
-              <span class="cs-next__label">Back to</span>
-              <p class="cs-next__title">All projects</p>
+              <span class="cs-next__label">Next project</span>
+              <p class="cs-next__title">StoryWall</p>
             </span>
             <span class="cs-next__arrow" aria-hidden="true">→</span>
           </a>
@@ -70,5 +303,6 @@
     </div>
 
     <script src="script.js"></script>
+    <script src="case-study.js"></script>
   </body>
 </html>
