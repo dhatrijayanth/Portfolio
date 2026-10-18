@@ -101,13 +101,26 @@
 .project-badge {
   display: inline-flex;
   align-items: center;
+  margin-left: auto;
   font-family: var(--font-mono);
   font-size: 0.72rem;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  padding: 0.28rem 0.6rem;
-  border-radius: 999px 0.85rem 999px 0.75rem;
-  background: rgba(92, 122, 58, 0.16);
+  padding: 0.22rem 0.55rem;
+  border-radius: 0.35rem;
+  border: 1px solid transparent;
+  line-height: 1.2;
+}
+
+.project-badge--done {
+  background: rgba(196, 92, 56, 0.12);
+  border-color: rgba(196, 92, 56, 0.28);
+  color: var(--terracotta);
+}
+
+.project-badge--wip {
+  background: rgba(92, 122, 58, 0.14);
+  border-color: rgba(92, 122, 58, 0.3);
   color: var(--sap);
 }
 
