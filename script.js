@@ -69,7 +69,7 @@
         "Name: " + name + "\nEmail: " + email + "\n\n" + message
       );
       window.location.href =
-        "mailto:dj24997@utexas.edu?subject=" + subject + "&body=" + body;
+        "mailto:dhatri07.jayanth@gmail.com?subject=" + subject + "&body=" + body;
     });
   }
 
