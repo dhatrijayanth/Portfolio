@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TXI · Universe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/solar-system.css" />
+  <link rel="stylesheet" href="css/showcase.css" />
+</head>
+<body>
+
+  <!-- Background starfield canvas (always visible, pointer-events: none) -->
+  <canvas id="starfield-canvas"></canvas>
+
+  <!-- ═══════════════════════════════════════════════
+       ENTRY SCREEN
+  ═══════════════════════════════════════════════ -->
+  <div id="entry-screen">
+    <div class="entry-bg-glow"></div>
+    <div class="entry-inner">
+      <div class="txi-wordmark">TXI</div>
+      <p class="entry-subtitle">A universe of creativity and community</p>
+      <button id="enter-universe-btn" class="cta-button">
+        <span>Enter the Universe</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════
+       SOLAR SYSTEM VIEW
+  ═══════════════════════════════════════════════ -->
+  <div id="solar-system-view" class="view-hidden">
+
+    <div id="solar-system-container">
+      <!-- Sun — brand center -->
+      <div id="sun">
+        <div class="sun-surface">
+          <span class="sun-text">TXI</span>
+        </div>
+        <div class="sun-corona"></div>
+        <div class="sun-halo sun-halo--inner"></div>
+        <div class="sun-halo sun-halo--outer"></div>
+      </div>
+      <!-- Orbit rings + planets injected by solar-system.js -->
+    </div>
+
+    <!-- Floating decorative elements (injected by JS) -->
+    <div id="floating-elements" aria-hidden="true"></div>
+
+    <!-- Bottom hint -->
+    <div id="explore-hint" class="hint-hidden">
+      <div class="hint-text">Click a glowing planet to explore a project</div>
+    </div>
+
+  </div>
+
+  <!-- ═══════════════════════════════════════════════
+       SHOWCASE VIEW
+  ═══════════════════════════════════════════════ -->
+  <div id="showcase-view" class="view-hidden">
+
+    <!-- ── Compact top bar ── -->
+    <div id="showcase-topbar">
+      <button id="back-to-universe" class="back-btn" aria-label="Return to solar system">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+          <path d="M9 2L4 7L9 12" stroke="currentColor" stroke-width="1.8"
+                stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Universe
+      </button>
+      <div id="topbar-project-id">TXI Project</div>
+      <div id="topbar-project-name"></div>
+    </div>
+
+    <!-- ── Sliding screens ── -->
+    <div id="screens-wrapper">
+      <div id="screens-track">
+
+        <!-- SCREEN 0: Project animation + overview -->
+        <section class="showcase-screen" id="screen-0">
+          <div class="s0-layout">
+
+            <!-- Project identity (visible on this screen only) -->
+            <div class="s0-identity">
+              <h1 id="showcase-title"></h1>
+              <p id="showcase-tagline"></p>
+            </div>
+
+            <!-- Full-bleed animation canvas -->
+            <div id="animation-stage" class="s0-stage">
+              <!-- canvas.anim-canvas + div.anim-annotation injected by showcase.js -->
+            </div>
+
+            <!-- Overview strip below animation -->
+            <div class="s0-overview-strip">
+              <div class="s0-stat-block">
+                <div class="s0-stat-num" id="anim-stat-num"></div>
+                <div class="s0-stat-label" id="anim-stat-label"></div>
+              </div>
+              <div class="s0-overview-text">
+                <h2 id="overview-heading"></h2>
+                <p id="overview-body"></p>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- SCREEN 1: Team -->
+        <section class="showcase-screen" id="screen-1">
+          <div class="screen-inner">
+            <div class="section-header">
+              <div class="section-eyebrow">The Team</div>
+              <h2 class="screen-heading">The people behind the project</h2>
+              <p class="screen-subhead">Multidisciplinary. Focused. Committed to craft.</p>
+            </div>
+            <div id="team-grid" class="team-grid"></div>
+          </div>
+        </section>
+
+        <!-- SCREEN 2: Impact & Info -->
+        <section class="showcase-screen" id="screen-2">
+          <div class="screen-inner info-layout">
+
+            <div class="info-pair">
+              <div class="info-block" id="info-what">
+                <div class="info-label">What We Built</div>
+                <p class="info-text"></p>
+              </div>
+              <div class="info-block" id="info-why">
+                <div class="info-label">Why It Was Needed</div>
+                <p class="info-text"></p>
+              </div>
+            </div>
+
+            <div class="info-block info-block--steps" id="info-steps">
+              <div class="info-label">What TXI Did</div>
+              <ol class="steps-list" id="steps-list"></ol>
+            </div>
+
+            <div class="info-block info-block--impact" id="info-impact">
+              <div class="info-label">Outcomes &amp; Impact</div>
+              <ul class="impact-list"></ul>
+            </div>
+
+          </div>
+        </section>
+
+      </div>
+    </div>
+
+    <!-- ── Bottom navigation bar ── -->
+    <nav id="showcase-nav-bar" aria-label="Project sections">
+      <button id="prev-btn" class="nav-arrow-btn" disabled aria-label="Previous section">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <path d="M10 3L5 8L10 13" stroke="currentColor" stroke-width="1.8"
+                stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+
+      <div id="nav-steps-row">
+        <button class="nav-step active" data-target="0">
+          <div class="nav-step-pip"></div>
+          <span class="nav-step-lbl">Overview</span>
+        </button>
+        <div class="nav-step-connector" aria-hidden="true"></div>
+        <button class="nav-step" data-target="1">
+          <div class="nav-step-pip"></div>
+          <span class="nav-step-lbl">Team</span>
+        </button>
+        <div class="nav-step-connector" aria-hidden="true"></div>
+        <button class="nav-step" data-target="2">
+          <div class="nav-step-pip"></div>
+          <span class="nav-step-lbl">Impact</span>
+        </button>
+      </div>
+
+      <button id="next-btn" class="nav-arrow-btn" aria-label="Next section">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="1.8"
+                stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    </nav>
+
+  </div>
+
+  <!-- Planet-click transition wipe -->
+  <div id="transition-overlay" aria-hidden="true"></div>
+  <div id="scene-wipe" aria-hidden="true"></div>
+
+  <!-- Scripts — order matters -->
+  <script src="js/data.js"></script>
+  <script src="js/starfield.js"></script>
+  <script src="js/solar-system.js"></script>
+  <script src="js/showcase.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+</html>

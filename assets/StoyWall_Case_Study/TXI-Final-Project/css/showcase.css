@@ -1,0 +1,689 @@
+/* ============================================================
+   TXI Universe — showcase.css
+   Project showcase: topbar, screens, team, info, navigation.
+
+   Design intent:
+   • An exhibition, not a website — generous space, deliberate type
+   • Three distinct screens feel like panels in a gallery
+   • The animation screen is immersive — canvas goes edge to edge
+   • Team cards are human: name, role, bio — not a corporate org chart
+   • Info screen reads like editorial design, not a form
+   • Navigation is quiet but clear — never competes with content
+============================================================ */
+
+/* ─── Showcase container ─────────────────────────────────── */
+#showcase-view {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-showcase);
+  display: flex;
+  flex-direction: column;
+  background: #030609;
+  /* Entry: slides up from slight offset */
+  transform: translateY(16px);
+  transition: transform 0.9s var(--ease-out-expo), opacity 0.9s var(--ease-in-out);
+}
+#showcase-view:not(.view-hidden) {
+  transform: translateY(0);
+}
+
+/* Accent atmosphere — subtle color that references the active planet */
+#showcase-view::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 50%;
+  background: radial-gradient(
+    ellipse 90% 100% at 10% -10%,
+    rgba(var(--accent-rgb), 0.045) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+  z-index: 0;
+  transition: background 0.8s ease;
+}
+
+/* ─── Top bar ─────────────────────────────────────────────── */
+#showcase-topbar {
+  position: relative;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 28px;
+  height: 56px;
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-40);
+  font-family: var(--font);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  text-indent: 0.14em;
+  text-transform: uppercase;
+  padding: 8px 16px;
+  border-radius: 2px;
+  transition: color 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+}
+.back-btn:hover {
+  color: var(--text-70);
+  border-color: var(--border-h);
+  background: var(--surface);
+}
+.back-btn svg { flex-shrink: 0; opacity: 0.6; transition: opacity 0.3s ease; }
+.back-btn:hover svg { opacity: 1; }
+
+#topbar-project-id {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: 400;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--accent);
+  opacity: 0.75;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#topbar-project-name {
+  font-family: var(--font);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--text-40);
+}
+
+/* ─── Screens wrapper ────────────────────────────────────── */
+#screens-wrapper {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+  min-height: 0; /* critical for flex child to scroll correctly */
+}
+
+#screens-track {
+  display: flex;
+  height: 100%;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+
+.showcase-screen {
+  min-width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+}
+.showcase-screen::-webkit-scrollbar { width: 3px; }
+.showcase-screen::-webkit-scrollbar-track { background: transparent; }
+.showcase-screen::-webkit-scrollbar-thumb {
+  background: rgba(240, 239, 234, 0.08);
+  border-radius: 2px;
+}
+
+/* ─── Screen 0: Animation + Overview ────────────────────── */
+#screen-0 {
+  overflow: hidden; /* no scrolling — fixed layout */
+}
+
+.s0-layout {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Project title + tagline above the canvas */
+.s0-identity {
+  padding: 22px 48px 16px;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 2;
+}
+
+#showcase-title {
+  font-size: clamp(24px, 3.5vw, 44px);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+
+#showcase-tagline {
+  font-size: clamp(13px, 1.2vw, 15px);
+  font-weight: 300;
+  color: var(--text-40);
+  letter-spacing: 0.02em;
+}
+
+/* Animation canvas — fills all remaining space */
+.s0-stage {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  min-height: 0;
+}
+
+/* Canvas injected by JS */
+.anim-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Story annotation — floats over the canvas bottom */
+.anim-annotation {
+  position: absolute;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: 400;
+  letter-spacing: 0.22em;
+  text-indent: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent);
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.7s ease;
+  pointer-events: none;
+  z-index: 3;
+}
+.anim-annotation.visible { opacity: 0.65; }
+
+/* Overview strip below the animation */
+.s0-overview-strip {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 16px 48px;
+  border-top: 1px solid var(--border);
+  background: rgba(3, 6, 9, 0.6);
+  backdrop-filter: blur(4px);
+  flex-shrink: 0;
+  position: relative;
+  z-index: 2;
+}
+
+/* The hero stat */
+.s0-stat-block {
+  flex-shrink: 0;
+  text-align: center;
+  padding-right: 40px;
+  border-right: 1px solid var(--border);
+}
+
+.s0-stat-num {
+  font-family: var(--font-mono);
+  font-size: clamp(28px, 4vw, 52px);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  text-shadow:
+    0 0 40px rgba(var(--accent-rgb), 0.5),
+    0 0 80px rgba(var(--accent-rgb), 0.2);
+  /* Number counts up on enter */
+  transition: opacity 0.6s ease;
+}
+
+.s0-stat-label {
+  margin-top: 5px;
+  font-size: 9px;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-indent: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-20);
+}
+
+/* Overview text */
+.s0-overview-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.s0-overview-text h2 {
+  font-size: clamp(14px, 1.6vw, 18px);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.3;
+  color: var(--text-70);
+  margin-bottom: 6px;
+}
+
+.s0-overview-text p {
+  font-size: clamp(12px, 1.1vw, 14px);
+  font-weight: 300;
+  color: var(--text-40);
+  line-height: 1.75;
+}
+
+/* ─── Shared screen inner wrapper ────────────────────────── */
+.screen-inner {
+  padding: 32px 48px 120px;
+  max-width: 1100px;
+}
+
+/* ─── Section headers ────────────────────────────────────── */
+.section-header {
+  margin-bottom: 36px;
+}
+
+.section-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: 400;
+  letter-spacing: 0.28em;
+  text-indent: 0.28em;
+  text-transform: uppercase;
+  color: var(--accent);
+  opacity: 0.8;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.section-eyebrow::before {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 1px;
+  background: var(--accent);
+  opacity: 0.6;
+  flex-shrink: 0;
+}
+
+.screen-heading {
+  font-size: clamp(22px, 3vw, 34px);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.screen-subhead {
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--text-20);
+  letter-spacing: 0.04em;
+}
+
+/* ─── Screen 1: Team ─────────────────────────────────────── */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.team-card {
+  background: var(--surface);
+  border-radius: 4px;
+  padding: 28px 26px;
+  border: 1px solid transparent;
+  transition:
+    background 0.35s ease,
+    border-color 0.35s ease,
+    transform 0.4s var(--ease-out-expo);
+  /* Entrance animation — staggered via JS inline style */
+  opacity: 0;
+  transform: translateY(20px);
+}
+.team-card.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition:
+    background 0.35s ease,
+    border-color 0.35s ease,
+    transform 0.55s var(--ease-out-expo),
+    opacity 0.55s ease;
+}
+.team-card:hover {
+  background: var(--surface-h);
+  border-color: var(--border);
+  transform: translateY(-4px) !important; /* override entrance transform */
+}
+
+.team-card-top {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+/* Avatar — initials circle with accent background */
+.team-avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  flex-shrink: 0;
+  /* background + color set inline by JS */
+}
+
+.team-name {
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: var(--text);
+  margin-bottom: 3px;
+}
+
+.team-role {
+  font-size: 10px;
+  font-weight: 400;
+  color: var(--accent);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+
+/* Bio — the human part */
+.team-bio {
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--text-40);
+  line-height: 1.75;
+  border-top: 1px solid var(--border);
+  padding-top: 14px;
+}
+
+/* ─── Screen 2: Info & Impact ────────────────────────────── */
+.info-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* What + Why — side by side */
+.info-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  margin-bottom: 0;
+}
+
+.info-block {
+  padding: 28px 0 32px;
+  border-top: 1px solid var(--border);
+  transition: border-color 0.3s ease;
+}
+.info-pair .info-block:last-child {
+  padding-left: 36px;
+  border-left: 1px solid var(--border);
+}
+
+/* Label — mono, uppercase, accent */
+.info-label {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: 400;
+  letter-spacing: 0.26em;
+  text-indent: 0.26em;
+  text-transform: uppercase;
+  color: var(--accent);
+  opacity: 0.85;
+  margin-bottom: 14px;
+}
+
+.info-text {
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--text-40);
+  line-height: 1.85;
+}
+
+/* What TXI Did — numbered steps */
+.info-block--steps {
+  border-top: 1px solid var(--border);
+}
+
+.steps-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  counter-reset: step-counter;
+  list-style: none;
+}
+
+.steps-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--text-40);
+  line-height: 1.7;
+  counter-increment: step-counter;
+  transition: color 0.3s ease;
+}
+.steps-list li:last-child { border-bottom: none; }
+.steps-list li:hover { color: var(--text-70); }
+
+/* Step number */
+.steps-list li::before {
+  content: counter(step-counter, decimal-leading-zero);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 400;
+  color: var(--accent);
+  opacity: 0.6;
+  flex-shrink: 0;
+  padding-top: 3px;
+  min-width: 24px;
+}
+
+/* Outcomes / Impact */
+.info-block--impact {
+  border-top: 1px solid var(--border);
+}
+
+.impact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  list-style: none;
+}
+
+.impact-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--text-40);
+  line-height: 1.65;
+  transition: color 0.3s ease;
+}
+.impact-list li:last-child { border-bottom: none; }
+.impact-list li:hover { color: var(--text-70); }
+
+/* Accent diamond bullet */
+.impact-list li::before {
+  content: '';
+  margin-top: 7px;
+  width: 5px;
+  height: 5px;
+  border: 1px solid var(--accent);
+  transform: rotate(45deg);
+  flex-shrink: 0;
+  opacity: 0.65;
+}
+
+/* ─── Bottom navigation bar ──────────────────────────────── */
+#showcase-nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 28px;
+  height: 68px;
+  border-top: 1px solid var(--border);
+  background: rgba(3, 6, 9, 0.80);
+  backdrop-filter: blur(8px);
+  flex-shrink: 0;
+  position: relative;
+  z-index: 20;
+}
+
+/* Arrow buttons */
+.nav-arrow-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-40);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition:
+    color 0.3s ease,
+    border-color 0.3s ease,
+    background 0.3s ease,
+    transform 0.3s var(--ease-out-expo);
+}
+.nav-arrow-btn:hover:not(:disabled) {
+  color: var(--text-70);
+  border-color: var(--border-h);
+  background: var(--surface);
+  transform: scale(1.1);
+}
+.nav-arrow-btn:disabled {
+  opacity: 0.2;
+  cursor: not-allowed;
+}
+
+/* Step indicators row */
+#nav-steps-row {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+/* Connector line between steps */
+.nav-step-connector {
+  width: 48px;
+  height: 1px;
+  background: var(--border);
+  position: relative;
+  overflow: hidden;
+}
+/* Active fill travels along the connector */
+.nav-step-connector::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s var(--ease-out-expo);
+  opacity: 0.5;
+}
+.nav-step-connector.passed::after {
+  transform: scaleX(1);
+}
+
+/* Individual step */
+.nav-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  border: none;
+  padding: 4px 12px;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  opacity: 0.4;
+}
+.nav-step:hover { opacity: 0.7; }
+.nav-step.active { opacity: 1; }
+.nav-step:focus-visible {
+  outline: none;
+  opacity: 0.85;
+}
+
+.nav-step-pip {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 1.5px solid var(--text-20);
+  background: transparent;
+  transition:
+    background 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease,
+    transform 0.35s var(--ease-out-expo);
+}
+.nav-step.active .nav-step-pip {
+  background: var(--accent);
+  border-color: var(--accent);
+  box-shadow: 0 0 10px rgba(var(--accent-rgb), 0.5);
+  transform: scale(1.2);
+}
+.nav-step.visited .nav-step-pip {
+  background: rgba(var(--accent-rgb), 0.35);
+  border-color: rgba(var(--accent-rgb), 0.5);
+}
+
+.nav-step-lbl {
+  font-size: 9px;
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  text-indent: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-40);
+  white-space: nowrap;
+  transition: color 0.3s ease;
+}
+.nav-step.active .nav-step-lbl { color: var(--text-70); }
+
+/* ─── Content reveal animations ──────────────────────────── */
+/* Screens fade + rise when entered */
+@keyframes screen-enter {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.screen-inner.is-entering > * {
+  opacity: 0;
+}
+
+/* ─── Responsive ─────────────────────────────────────────── */
+@media (max-width: 700px) {
+  .screen-inner       { padding: 24px 20px 100px; }
+  .s0-identity        { padding: 18px 20px 12px; }
+  .s0-overview-strip  { padding: 14px 20px; gap: 20px; flex-direction: column; }
+  .s0-stat-block      { padding-right: 0; border-right: none; border-bottom: 1px solid var(--border); padding-bottom: 12px; }
+  .info-pair          { grid-template-columns: 1fr; }
+  .info-pair .info-block:last-child { padding-left: 0; border-left: none; }
+  #showcase-topbar    { padding: 0 16px; }
+  #showcase-nav-bar   { padding: 0 16px; }
+  .nav-step-connector { width: 24px; }
+  .nav-step-lbl       { display: none; }
+  .team-grid          { grid-template-columns: 1fr; }
+}

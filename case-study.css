@@ -146,6 +146,10 @@
   color: var(--sap);
 }
 
+.cs-back + .cs-badge {
+  margin-left: 1.25rem;
+}
+
 .cs-summary {
   font-size: 1.1rem;
   color: var(--ink-soft);
@@ -220,6 +224,21 @@
 
 .cs-video-wrap {
   background: #0f1117;
+}
+
+.cs-video-wrap--compact {
+  max-width: min(22rem, 100%);
+  margin-inline: auto;
+}
+
+.cs-video-wrap--compact .cs-video {
+  max-height: min(70vh, 36rem);
+  object-fit: contain;
+}
+
+.cs-video-wrap--process {
+  max-width: min(40rem, 100%);
+  margin-inline: auto;
 }
 
 .cs-video {
@@ -560,6 +579,7 @@
 
 .cs-credits {
   margin-top: 1.25rem;
+  margin-bottom: 3.25rem;
   padding: 1rem 1.15rem;
   border: 1px dashed var(--line);
   border-radius: 1rem;
@@ -677,6 +697,12 @@
 .cs-embed--proto {
   aspect-ratio: 4 / 3;
   background: #0a0a0a;
+}
+
+.cs-embed--universe {
+  aspect-ratio: 16 / 10;
+  min-height: min(70vh, 40rem);
+  background: #020408;
 }
 
 .cs-pdf-embed__frame,

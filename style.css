@@ -274,8 +274,10 @@ button {
   top: 2%;
   height: 78%;
   z-index: 3;
-  pointer-events: none;
+  pointer-events: auto;
   overflow: visible;
+  transition: transform 0.35s var(--ease);
+  will-change: transform;
 }
 
 .leaf {
@@ -291,6 +293,9 @@ button {
   transform-origin: 50% 80%;
   animation: leaf-drift 16s ease-in-out infinite;
   animation-delay: var(--d);
+  pointer-events: auto;
+  cursor: pointer;
+  touch-action: manipulation;
 }
 
 .leaf::after {
@@ -312,6 +317,40 @@ button {
 .leaf--sap {
   background: linear-gradient(160deg, var(--sap-soft), var(--sap));
   opacity: 0.72;
+}
+
+.leaf:hover,
+.leaf:focus-visible {
+  opacity: 1;
+  filter: brightness(1.1);
+  animation-play-state: paused;
+  transform: translate(-50%, -50%) rotate(var(--r)) scale(calc(var(--s) * 1.18));
+  outline: none;
+  z-index: 4;
+}
+
+.leaf.is-falling {
+  animation: leaf-fall 1.15s cubic-bezier(0.33, 0.02, 0.7, 0.2) forwards !important;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.leaf.is-returning {
+  animation: none !important;
+  opacity: 0;
+  filter: none;
+  transform: translate(-50%, -50%) rotate(var(--r)) scale(0.35);
+  transition: none;
+}
+
+.leaf.is-returning.is-back {
+  opacity: 0.72;
+  transform: translate(-50%, -50%) rotate(var(--r)) scale(var(--s));
+  transition: opacity 0.55s ease, transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.leaf--terra.is-returning.is-back {
+  opacity: 0.68;
 }
 
 .hero-tree {
@@ -454,6 +493,8 @@ button {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  /* Pull subject left into circle center (was sitting too far right) */
+  object-position: 62% 32%;
 }
 
 .about-portrait-label {
@@ -500,6 +541,141 @@ button {
 
   .about-portrait-circle {
     width: 13rem;
+  }
+}
+
+.cs-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  margin-bottom: 1.5rem;
+  transition: color 0.2s var(--ease);
+}
+
+.cs-back:hover,
+.cs-back:focus-visible {
+  color: var(--terracotta);
+}
+
+.page--product {
+  max-width: none;
+}
+
+.page--product .page-lead {
+  max-width: 40rem;
+  margin-bottom: 2rem;
+}
+
+.product-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.85rem;
+  margin: 0 0 2rem;
+}
+
+.product-gallery__item {
+  position: relative;
+  margin: 0;
+  aspect-ratio: 3 / 4;
+  border-radius: 1.1rem 0.55rem 1.25rem 0.75rem;
+  overflow: hidden;
+  background: var(--stone);
+  border: 1px solid var(--line);
+}
+
+.product-gallery__item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.45s var(--ease);
+}
+
+.product-gallery__item:hover img {
+  transform: scale(1.03);
+}
+
+.product-gallery--two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  max-width: 42rem;
+}
+
+.product-gallery--one {
+  grid-template-columns: 1fr;
+  max-width: 36rem;
+}
+
+.product-gallery__item--wide {
+  aspect-ratio: 4 / 3;
+}
+
+.jewelry-set {
+  margin-bottom: 3.25rem;
+  padding: 1.75rem 0 2.75rem;
+  border-bottom: 1px dashed var(--line);
+}
+
+.jewelry-set:last-of-type {
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-bottom: 2rem;
+}
+
+.jewelry-set__title {
+  font-size: clamp(1.35rem, 2.8vw, 1.65rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  margin: 0 0 0.5rem;
+}
+
+.jewelry-set__note {
+  max-width: 40rem;
+  margin: 0 0 1.15rem;
+  color: var(--ink-soft);
+  font-size: 0.98rem;
+}
+
+.jewelry-piece {
+  margin-bottom: 1.75rem;
+}
+
+.jewelry-piece:last-child {
+  margin-bottom: 0;
+}
+
+.jewelry-piece__title {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--sap);
+  margin: 0 0 0.35rem;
+}
+
+.jewelry-piece .jewelry-set__note {
+  margin-bottom: 0.85rem;
+  font-size: 0.92rem;
+}
+
+@media (max-width: 800px) {
+  .product-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .product-gallery--two,
+  .product-gallery--one {
+    max-width: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-gallery,
+  .product-gallery--two {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -935,6 +1111,39 @@ button {
   66% {
     transform: translate(calc(-50% - 10px), calc(-50% + 8px))
       rotate(calc(var(--r) - 6deg)) scale(var(--s));
+  }
+}
+
+@keyframes leaf-fall {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) rotate(var(--r)) scale(var(--s));
+  }
+  18% {
+    opacity: 1;
+    transform: translate(calc(-50% + var(--fall-x, 20px)), calc(-50% - 28px))
+      rotate(calc(var(--r) + 24deg)) scale(calc(var(--s) * 1.05));
+  }
+  100% {
+    opacity: 0;
+    transform: translate(calc(-50% + var(--fall-x, 20px)), calc(-50% + 220px))
+      rotate(calc(var(--r) + var(--fall-spin, 140deg))) scale(calc(var(--s) * 0.85));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .leaf {
+    animation: none;
+  }
+
+  .leaf.is-falling {
+    animation: none !important;
+    opacity: 0;
+    transition: opacity 0.35s ease;
+  }
+
+  .hero-leaves {
+    transition: none;
   }
 }
 

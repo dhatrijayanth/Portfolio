@@ -249,7 +249,7 @@ function drawCard() {
 
   textSize(base * 0.9);
   fill(255, cardAlpha * 0.7);
-  text(t.word + ", " + t.count + " times — a feed fed only by you.",
+  text(t.word + ", " + t.count + " times: a feed fed only by you.",
        width / 2, height / 2 - 44);
 
   text(fresh + " of " + seenInRain.length + " new words didn't come from your taste. they came from the weather.",

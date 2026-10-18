@@ -373,7 +373,7 @@
         (img.alt ? img.alt + ". " : "") + "Open image board to zoom and pan"
       );
 
-      const wrap = img.closest(".cs-shot, .cs-hero-figure");
+      const wrap = img.closest(".cs-shot, .cs-hero-figure, .product-gallery__item");
       if (wrap) wrap.classList.add("cs-zoomable-wrap");
 
       function activate(event) {
@@ -388,7 +388,9 @@
     }
 
     document
-      .querySelectorAll(".cs-shot img, .cs-hero-figure img, .cs-hero-img")
+      .querySelectorAll(
+        ".cs-shot img, .cs-hero-figure img, .cs-hero-img, .product-gallery__item img"
+      )
       .forEach(bindImage);
   }
 

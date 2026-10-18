@@ -10,7 +10,7 @@
       href="https://fonts.googleapis.com/css2?family=Georama:wght@400;500;600&family=Platypi:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css?v=4" />
+    <link rel="stylesheet" href="style.css?v=5" />
   </head>
   <body>
     <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">
@@ -35,8 +35,12 @@
 
       <main class="main">
         <section class="page page--flush hero" aria-label="Home">
-          <div class="hero-tree-wrap" aria-hidden="true">
-            <div class="hero-leaves">
+          <div class="hero-tree-wrap">
+            <div
+              class="hero-leaves"
+              role="group"
+              aria-label="Interactive tree. Hover or click leaves to pluck them."
+            >
               <!-- upper canopy -->
               <span class="leaf leaf--sap" style="--x: 28%; --y: 10%; --s: 0.95; --r: -28deg; --d: 0s"></span>
               <span class="leaf leaf--terra" style="--x: 48%; --y: 6%; --s: 0.85; --r: 18deg; --d: -2s"></span>
@@ -83,6 +87,7 @@
               width="718"
               height="878"
               decoding="async"
+              aria-hidden="true"
             />
           </div>
           <div class="hero-content">
@@ -103,6 +108,6 @@
       </main>
     </div>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=3"></script>
   </body>
 </html>
