@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Artwork - Dhatri Jayanth</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Georama:wght@400;500;600&family=Platypi:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="case-study.css" />
+  </head>
+  <body>
+    <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+      <span></span>
+    </button>
+    <div class="nav-backdrop"></div>
+
+    <div class="site">
+      <aside class="sidebar" aria-label="Primary">
+        <a class="brand" href="index.html">
+          <span class="brand-name">Dhatri Jayanth</span>
+          <span class="brand-role">Experience Designer</span>
+        </a>
+        <nav class="nav">
+          <a href="projects.html">Projects</a>
+          <a href="about.html">About</a>
+          <a href="resume.html">Resume</a>
+          <a href="contact.html">Contact</a>
+          <a class="is-active" href="art.html">Art</a>
+        </nav>
+      </aside>
+
+      <main class="main">
+        <article class="page art-detail" id="art-detail">
+          <a class="cs-back" href="art.html">Back to gallery</a>
+
+          <p class="page-label" id="art-category">Fine Art &amp; Illustration</p>
+          <h1 class="page-title" id="art-title">Artwork</h1>
+
+          <figure class="art-detail__hero cs-shot">
+            <img id="art-hero" src="" alt="" width="1600" height="1200" decoding="async" />
+          </figure>
+
+          <div class="art-detail__body">
+            <dl class="art-detail__meta" id="art-meta"></dl>
+            <div class="art-detail__copy">
+              <h2 class="art-detail__headline" id="art-headline"></h2>
+              <div id="art-body"></div>
+            </div>
+          </div>
+
+          <section class="art-detail__gallery" id="art-gallery-section" hidden>
+            <h2 class="art-section-label">From this project</h2>
+            <div class="product-gallery" id="art-gallery" role="list"></div>
+          </section>
+
+          <nav class="art-detail__pager" id="art-pager" aria-label="Other artworks"></nav>
+        </article>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="art-works.js"></script>
+    <script src="art-work.js"></script>
+    <script src="case-study.js"></script>
+  </body>
+</html>
