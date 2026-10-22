@@ -711,6 +711,51 @@ button {
 
 /* --- Projects --- */
 
+.page--projects {
+  position: relative;
+  max-width: none;
+  overflow: clip;
+}
+
+.projects-branch-bg {
+  position: absolute;
+  inset: 6% 0 auto;
+  z-index: 0;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(7rem, 20vh, 14rem);
+  opacity: 0.12;
+  width: 100%;
+}
+
+.projects-branch-bg img {
+  width: 100%;
+  max-width: none;
+  height: auto;
+  display: block;
+  margin: 0;
+  user-select: none;
+  object-fit: cover;
+  object-position: left center;
+}
+
+.projects-branch-bg::after {
+  content: "";
+  display: block;
+  width: 100%;
+  aspect-ratio: 1024 / 348;
+  background: url("assets/simple-tree-branch-2-1024x348.png") center / cover
+    no-repeat;
+  transform: scaleX(-1);
+  opacity: 0.9;
+}
+
+.page--projects > *:not(.projects-branch-bg) {
+  position: relative;
+  z-index: 1;
+}
+
 .project-section {
   margin-bottom: 3rem;
 }
