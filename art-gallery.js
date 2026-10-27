@@ -24,12 +24,18 @@
     if (!work) return;
     var images = work.images || [];
     var multi = images.length > 1;
-    var src = coverSrc(work);
     var href = "art-work.html?id=" + encodeURIComponent(id);
     var labelId = id + "-heading";
+    var loading = index < 4 ? "eager" : "lazy";
+    // Show up to 2 images in the gallery tile so related pieces read as one project
+    var pair = multi
+      ? images.slice(0, 2)
+      : [{ src: coverSrc(work), alt: work.title }];
 
     html +=
-      '<article class="art-tile" role="listitem" aria-labelledby="' +
+      '<article class="art-tile' +
+      (multi ? " art-tile--pair" : "") +
+      '" role="listitem" aria-labelledby="' +
       escapeHtml(labelId) +
       '">' +
       '<h2 id="' +
@@ -41,18 +47,30 @@
       escapeHtml(work.title) +
       "</a>" +
       "</h2>" +
-      '<a class="art-cell art-cell--cover" href="' +
+      '<a class="art-tile__link" href="' +
       href +
       '" aria-label="' +
       escapeHtml(work.title) +
-      (multi ? ", " + images.length + " images" : "") +
+      (multi ? ", " + images.length + " images in this project" : "") +
       '">' +
-      '<div class="art-circle">' +
-      '<img src="' +
-      escapeHtml(src) +
-      '" alt="" width="600" height="600" loading="' +
-      (index < 6 ? "eager" : "lazy") +
-      '" />' +
+      '<div class="art-tile__frames' +
+      (multi ? " art-tile__frames--pair" : "") +
+      '">';
+
+    pair.forEach(function (img, imgIndex) {
+      html +=
+        '<div class="art-circle">' +
+        '<img src="' +
+        escapeHtml(img.src) +
+        '" alt="' +
+        escapeHtml(img.alt || work.title) +
+        '" width="600" height="600" loading="' +
+        (imgIndex === 0 ? loading : "lazy") +
+        '" />' +
+        "</div>";
+    });
+
+    html +=
       "</div>" +
       (multi
         ? '<span class="art-cover-badge" aria-hidden="true">' +

@@ -48,15 +48,18 @@
   const images = work.images || [];
   if (images.length > 1) {
     gallerySection.hidden = false;
+    galleryEl.classList.add("art-detail__frames");
     galleryEl.innerHTML = images
       .map(function (img) {
         return (
-          '<figure class="product-gallery__item" role="listitem">' +
+          '<figure class="art-detail__frame" role="listitem">' +
+          '<div class="art-circle">' +
           '<img src="' +
           escapeAttr(img.src) +
           '" alt="' +
           escapeAttr(img.alt || work.title) +
           '" width="1200" height="1200" loading="lazy" />' +
+          "</div>" +
           "</figure>"
         );
       })
