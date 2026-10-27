@@ -10,7 +10,7 @@
       href="https://fonts.googleapis.com/css2?family=Georama:wght@400;500;600&family=Platypi:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css?v=5" />
+    <link rel="stylesheet" href="style.css?v=7" />
   </head>
   <body>
     <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">
@@ -35,6 +35,27 @@
 
       <main class="main">
         <section class="page page--flush hero" aria-label="Home">
+          <div class="hero-sky" aria-hidden="true">
+            <svg class="hero-sky-svg" viewBox="0 0 1000 700" preserveAspectRatio="xMidYMid slice">
+              <defs>
+                <radialGradient id="hero-warm-glow" cx="38%" cy="48%" r="62%">
+                  <stop offset="0%" stop-color="#ffe5c2" stop-opacity="0.85" />
+                  <stop offset="40%" stop-color="#fff2df" stop-opacity="0.45" />
+                  <stop offset="100%" stop-color="#ffffff" stop-opacity="0.2" />
+                </radialGradient>
+              </defs>
+              <rect width="1000" height="700" fill="url(#hero-warm-glow)" />
+              <!-- sun behind the arc so the line crosses through it -->
+              <circle cx="147" cy="162" r="54" fill="#fdd8a2" opacity="0.4" />
+              <circle cx="147" cy="162" r="39" fill="#ffcb82" />
+              <path
+                d="M 0 320 A 592.05 592.05 0 0 1 1000 320"
+                fill="none"
+                stroke="#d0d7b8"
+                stroke-width="1.5"
+              />
+            </svg>
+          </div>
           <div class="hero-tree-wrap">
             <div
               class="hero-leaves"

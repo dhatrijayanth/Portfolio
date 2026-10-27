@@ -258,6 +258,22 @@ button {
     linear-gradient(145deg, #ddd6cc 0%, var(--plaster) 45%, #cfc8bc 100%);
 }
 
+.hero-sky {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.hero-sky-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
 .hero-tree-wrap {
   position: absolute;
   right: clamp(0.5rem, 4vw, 3rem);
@@ -493,7 +509,6 @@ button {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  /* Pull subject left into circle center (was sitting too far right) */
   object-position: 62% 32%;
 }
 
@@ -719,36 +734,44 @@ button {
 
 .projects-branch-bg {
   position: absolute;
-  inset: 6% 0 auto;
+  inset: 0;
   z-index: 0;
   pointer-events: none;
-  display: flex;
-  flex-direction: column;
-  gap: clamp(7rem, 20vh, 14rem);
-  opacity: 0.12;
-  width: 100%;
+  overflow: hidden;
+  opacity: 0.11;
 }
 
-.projects-branch-bg img {
-  width: 100%;
-  max-width: none;
+.projects-branch-bg__img {
+  position: absolute;
+  width: min(72%, 42rem);
   height: auto;
   display: block;
-  margin: 0;
   user-select: none;
-  object-fit: cover;
-  object-position: left center;
 }
 
-.projects-branch-bg::after {
-  content: "";
-  display: block;
-  width: 100%;
-  aspect-ratio: 1024 / 348;
-  background: url("assets/simple-tree-branch-2-1024x348.png") center / cover
-    no-repeat;
+.projects-branch-bg__img--a {
+  top: 6%;
+  right: -3%;
+}
+
+.projects-branch-bg__img--b {
+  top: 28%;
+  left: -5%;
   transform: scaleX(-1);
-  opacity: 0.9;
+  width: min(68%, 38rem);
+}
+
+.projects-branch-bg__img--c {
+  top: 54%;
+  right: -4%;
+  width: min(70%, 40rem);
+}
+
+.projects-branch-bg__img--d {
+  top: 78%;
+  left: -6%;
+  transform: scaleX(-1);
+  width: min(66%, 36rem);
 }
 
 .page--projects > *:not(.projects-branch-bg) {
@@ -1242,6 +1265,98 @@ a.art-cell {
   margin-bottom: clamp(2.5rem, 6vw, 4rem);
 }
 
+.art-intro {
+  max-width: none;
+  margin: 0;
+  padding: clamp(1.5rem, 4vw, 2.75rem) clamp(1rem, 3vw, 2.5rem) 0.75rem;
+}
+
+.art-intro .page-lead {
+  margin-bottom: 1.25rem;
+}
+
+.art-grid--projects {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-top: 0.25rem;
+}
+
+.art-tile {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 0.85rem clamp(0.65rem, 1.5vw, 1.1rem) 1rem;
+}
+
+.art-tile__title {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--terracotta);
+  margin: 0 0 0.65rem;
+  line-height: 1.3;
+}
+
+.art-tile:nth-child(4n + 2) .art-tile__title,
+.art-tile:nth-child(4n + 3) .art-tile__title {
+  color: var(--sap);
+}
+
+.art-tile__title-link {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s var(--ease);
+}
+
+.art-tile__title-link:hover {
+  color: var(--ink);
+}
+
+.art-grid--projects .art-cell--cover {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  padding: clamp(0.55rem, 1.8vw, 1.1rem);
+  margin: 0;
+  background: transparent;
+  border: none;
+  border-right: none;
+  border-bottom: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: inherit;
+}
+
+.art-cell--cover:focus-visible {
+  outline: 2px solid var(--sap);
+  outline-offset: 3px;
+}
+
+.art-cover-badge {
+  position: absolute;
+  right: 0.55rem;
+  bottom: 0.55rem;
+  z-index: 2;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--white);
+  background: rgba(31, 28, 25, 0.62);
+  padding: 0.3rem 0.5rem;
+  border-radius: 999px;
+}
+
+.art-grid--projects .art-circle {
+  width: 92%;
+}
+
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -1422,15 +1537,26 @@ a.art-cell {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .art-grid--gallery {
+  .art-grid--gallery,
+  .art-grid--projects {
     grid-template-columns: repeat(2, 1fr);
   }
 
 }
 
+@media (max-width: 1100px) {
+  .art-grid--projects {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
 @media (max-width: 480px) {
   .art-grid {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .art-grid--projects {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .hero-name {
