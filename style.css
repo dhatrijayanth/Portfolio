@@ -528,20 +528,133 @@ button {
   margin-top: 0.5rem;
 }
 
-.about-otd {
-  margin-top: 0.5rem;
+.what-i-do {
+  margin-top: 0.75rem;
+  padding: clamp(1.5rem, 4vw, 2.75rem) clamp(0.75rem, 2vw, 1.5rem)
+    clamp(2rem, 5vw, 3rem);
+  border-radius: 1.5rem;
+  background:
+    radial-gradient(circle, rgba(31, 28, 25, 0.07) 1px, transparent 1.2px) 0 0 / 18px 18px,
+    linear-gradient(160deg, #f3f0ea 0%, var(--plaster) 55%, #ebe6de 100%);
 }
 
-.about-otd .art-section-label {
-  margin-left: 0;
-  margin-bottom: 1rem;
-  color: var(--sap);
+.what-i-do__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.85rem, 3.5vw, 2.45rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  text-align: center;
+  color: var(--ink);
+  margin: 0 0 clamp(1.75rem, 4vw, 2.75rem);
 }
 
-.about-otd .art-grid {
-  margin-left: 0;
-  margin-right: 0;
-  margin-bottom: 0;
+.what-i-do__board {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1rem, 3vw, 1.75rem);
+  align-items: start;
+  max-width: 56rem;
+  margin: 0 auto;
+}
+
+.what-card {
+  position: relative;
+  background: var(--white);
+  border: 1.5px solid var(--ink);
+  border-radius: 0.15rem;
+  padding: 1.6rem 1.25rem 1.35rem;
+  box-shadow: 0 10px 28px rgba(31, 28, 25, 0.06);
+}
+
+.what-card--left {
+  transform: rotate(-3.5deg) translateY(0.35rem);
+}
+
+.what-card--mid {
+  transform: rotate(1.5deg) translateY(1.35rem);
+  z-index: 1;
+}
+
+.what-card--right {
+  transform: rotate(3deg) translateY(0.15rem);
+}
+
+.what-card__icon {
+  position: absolute;
+  top: -1.35rem;
+  right: 0.85rem;
+  width: 3.4rem;
+  height: 3.4rem;
+  color: var(--terracotta);
+  background: var(--white);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+}
+
+.what-card__icon svg {
+  width: 2.55rem;
+  height: 2.55rem;
+  display: block;
+}
+
+.what-card__heading {
+  font-family: var(--font-sans);
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin: 0 0 0.65rem;
+}
+
+.what-card__rule {
+  border: none;
+  height: 1px;
+  background: var(--ink);
+  opacity: 0.35;
+  margin: 0 0 0.9rem;
+}
+
+.what-card__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.55rem;
+}
+
+.what-card__list li {
+  position: relative;
+  padding-left: 1.35rem;
+  font-size: 0.98rem;
+  line-height: 1.4;
+  color: var(--ink-soft);
+}
+
+.what-card__list li::before {
+  content: "✦";
+  position: absolute;
+  left: 0;
+  top: 0.05rem;
+  color: var(--terracotta);
+  font-size: 0.78rem;
+}
+
+@media (max-width: 900px) {
+  .what-i-do__board {
+    grid-template-columns: 1fr;
+    max-width: 24rem;
+  }
+
+  .what-card--left,
+  .what-card--mid,
+  .what-card--right {
+    transform: none;
+  }
+
+  .what-card--mid {
+    order: 0;
+  }
 }
 
 @media (max-width: 700px) {
